@@ -1,0 +1,32 @@
+{
+  "name": "looksrareminer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/app.js",
+    "build": "npx tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@alch/alchemy-web3": "^1.4.6",
+    "@ethereumjs/common": "^2.6.5",
+    "@ethereumjs/tx": "^3.5.2",
+    "@looksrare/sdk": "^0.8.1",
+    "abi-decoder": "^2.4.0",
+    "axios": "^0.27.2",
+    "dotenv": "^16.0.1",
+    "ethereumjs-util": "^7.1.5",
+    "ethers": "^5.6.9",
+    "lodash": "^4.17.21",
+    "web3": "^1.7.5",
+    "web3-utils": "^1.7.5",
+    "winston": "^3.8.1"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.182",
+    "@types/node": "^18.6.4"
+  }
+}

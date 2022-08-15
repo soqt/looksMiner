@@ -1,0 +1,49 @@
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+*.swp
+
+dist
+
+pids
+logs
+results
+tmp
+
+# Build
+dist/public/css/main.css
+
+# Coverage reports
+coverage
+
+# API keys and secrets
+.env
+
+# Dependency director
+node_modules
+bower_components
+
+# Editors
+.idea
+*.iml
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Ignore built ts files
+dist/**/*
+!src/libs/opensea/opensea-abi.json
+!src/ERC721-ABI.json
+
+
+# ignore yarn.lock pnpm-lock
+yarn.lock
+pnpm-lock.yaml
+
+test/**/*
