@@ -14,16 +14,23 @@ dotenv.config();
 const {
     PUBLIC_ADDRESS: publicAddress,
     PRIVATE_KEY: privateKey,
-    LOOKSRARE_API_KEY: looksrareAPIKey,
-    HIGHER_PRICE_NFT_IDS: higherPriceNftIds
+    LOOKSRARE_API_KEY,
+    PRICE_RATIO_RANGE: priceRatioRange,
+    PRICE_MULTIPLIER,
+    HIGHER_PRICE_NFT_IDS: higherPriceNftIds,
 } = process.env;
+
+if (!publicAddress || !privateKey || !LOOKSRARE_API_KEY || !priceRatioRange || !PRICE_MULTIPLIER) {
+    throw new Error("环境变量缺失")
+}
 
 const looksrareContract = "0x59728544b08ab483533076417fbbb2fd0b17ce3a"
 const NftContract = "0x34d85c9CDeB23FA97cb08333b511ac86E1C4E258" // Otherside
 const higerPriceIds = higherPriceNftIds ? higherPriceNftIds.split(",") : []
 
-const PRICE_RATIO_RANGE = [1.05, 1.06]
-const PRICE_MULTIPLIER = 1.08
+const PRICE_RATIO_RANGE = _.map(priceRatioRange.split(","), (n) => {
+    return parseFloat(n)
+})
 
 const web3 = getWeb3({ networkId: 1, rpcProvider: 'restAlchemy'}) as AlchemyWeb3
 
@@ -32,7 +39,7 @@ const web3 = getWeb3({ networkId: 1, rpcProvider: 'restAlchemy'}) as AlchemyWeb3
  * @param callback {() => any} Transaction成功后的回调函数
  * */
 const cancelListing = async (callback: () => any) => {
-    const lrClient = new LooksRareClient(looksrareAPIKey!)
+    const lrClient = new LooksRareClient(LOOKSRARE_API_KEY!)
     const abi = require('./src/looksrareABI.json')
     const looksContract = new web3.eth.Contract(abi, looksrareContract);
     const orderNonce = await lrClient.getOrdersNonce(publicAddress!)
@@ -57,7 +64,7 @@ const cancelListing = async (callback: () => any) => {
  * */
 const calculateNewPrice = (floorPriceInWei: string): string => {
     const ether = web3.utils.fromWei(new BN(floorPriceInWei))
-    const newFloorInEth = parseFloat(ether) * PRICE_MULTIPLIER
+    const newFloorInEth = parseFloat(ether) * parseFloat(PRICE_MULTIPLIER)
     const newFloor = Math.round(newFloorInEth * 100) / 100
     return web3.utils.toWei(newFloor + '', 'ether')
 }
@@ -108,7 +115,7 @@ interface NFTPrice {
 const listNfts = async(nftIds: string[], floorPrice: string): Promise<NFTPrice[]> => {
     try {
         let listings: NFTPrice[] = []
-        const lrClient = new LooksRareClient(looksrareAPIKey!)
+        const lrClient = new LooksRareClient(LOOKSRARE_API_KEY)
         for (let i = 0; i < nftIds.length; i++) {
             let newPrice = calculateNewPrice(floorPrice)
             const tokenId = nftIds[i]
@@ -149,7 +156,7 @@ const main = async () => {
                 break
             }
         }
-        const lrClient = new LooksRareClient(looksrareAPIKey!)
+        const lrClient = new LooksRareClient(LOOKSRARE_API_KEY)
 
         const { floorPrice } = await lrClient.getCollectionsStats(NftContract)
 
@@ -173,6 +180,8 @@ const main = async () => {
             await listNfts(nftIds, floorPrice)
         }
     } catch (err) {
+        serverChan.pushMessage("Network Error")
+        logger.error(err)
         throw err
     }
 }
