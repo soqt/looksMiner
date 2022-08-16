@@ -1,4 +1,5 @@
 import axios from 'axios';
+import axiosRetry from "axios-retry";
 
 const endPoint = 'https://api.blocknative.com/gasprices/blockprices';
 
@@ -6,6 +7,10 @@ const {
   BLOCKNATIVE_API_KEY: blockNativeAPIKey = '',
 } = process.env;
 
+axiosRetry(axios, {
+  retries: 6,
+  retryDelay: axiosRetry.exponentialDelay
+})
 
 const getGasPrice = async (): Promise<BlockNative.BlockPriceMeta> => {
   try {

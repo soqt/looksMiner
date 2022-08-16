@@ -1,10 +1,16 @@
 import axios from 'axios';
 import { BigNumber, ethers } from 'ethers';
 import { addressesByNetwork, generateMakerOrderTypedData, SupportedChainId, MakerOrder } from '@looksrare/sdk';
+import axiosRetry from "axios-retry";
 
 const endpoint = 'https://api.looksrare.org/api/v1';
 
 type OrderStatus = "VALID" | "CANCELLED"
+
+axiosRetry(axios, {
+    retries: 3,
+    retryDelay: axiosRetry.exponentialDelay
+})
 
 export interface Order {
     hash: string,
@@ -52,8 +58,8 @@ class LooksRareClient {
         priceInWei: string,
     ) => {
         const price = BigNumber.from(priceInWei)
-        const order = await this.prepareMakeOrder(collectionAddress, privateKey, tokenId, price);
         try {
+            const order = await this.prepareMakeOrder(collectionAddress, privateKey, tokenId, price);
             const { data } = await axios.post(`${endpoint}/orders`, order, {
                 headers: {
                     'X-Looks-Api-Key': this.apiKey

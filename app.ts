@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import _, {forEach} from 'lodash';
 import dotenv from 'dotenv';
 import { BN } from "ethereumjs-util";
 import { getWeb3 } from "./src/web3Provider";
@@ -16,11 +16,11 @@ const {
     PRIVATE_KEY: privateKey,
     LOOKSRARE_API_KEY,
     PRICE_RATIO_RANGE: priceRatioRange,
-    PRICE_MULTIPLIER,
+    PRICE_MULTIPLIER: priceMultiplier,
     HIGHER_PRICE_NFT_IDS: higherPriceNftIds,
 } = process.env;
 
-if (!publicAddress || !privateKey || !LOOKSRARE_API_KEY || !priceRatioRange || !PRICE_MULTIPLIER) {
+if (!publicAddress || !privateKey || !LOOKSRARE_API_KEY || !priceRatioRange || !priceMultiplier) {
     throw new Error("环境变量缺失")
 }
 
@@ -64,7 +64,7 @@ const cancelListing = async (callback: () => any) => {
  * */
 const calculateNewPrice = (floorPriceInWei: string): string => {
     const ether = web3.utils.fromWei(new BN(floorPriceInWei))
-    const newFloorInEth = parseFloat(ether) * parseFloat(PRICE_MULTIPLIER)
+    const newFloorInEth = parseFloat(ether) * parseFloat(priceMultiplier)
     const newFloor = Math.round(newFloorInEth * 100) / 100
     return web3.utils.toWei(newFloor + '', 'ether')
 }
@@ -137,7 +137,11 @@ const listNfts = async(nftIds: string[], floorPrice: string): Promise<NFTPrice[]
             }
         }
         logger.info(`Successfully listed tokens ${listings}`)
-        await serverChan.pushMessage("成功上架", listings.toString())
+        let message = ''
+        forEach(listings, (list) => {
+            message += `${list.tokenId} @ list.price Ξ \n`
+        })
+        await serverChan.pushMessage("成功上架", message)
         return listings
     } catch (err) {
         logger.error("挂单错误", err)
