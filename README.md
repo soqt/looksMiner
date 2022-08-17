@@ -20,7 +20,7 @@
 这里用pnpm，如果用npm或者yarn自行替换即可
 ```bash
 pnpm install
-pnpm build
+pnpm buildt 
 pnpm run start
 ```
 
