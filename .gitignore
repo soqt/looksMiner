@@ -38,12 +38,3 @@ Thumbs.db
 
 # Ignore built ts files
 dist/**/*
-!src/libs/opensea/opensea-abi.json
-!src/ERC721-ABI.json
-
-
-# ignore yarn.lock pnpm-lock
-yarn.lock
-pnpm-lock.yaml
-
-test/**/*
