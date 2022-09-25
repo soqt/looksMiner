@@ -1,4 +1,4 @@
-import _, {forEach} from 'lodash';
+import _ from 'lodash';
 import dotenv from 'dotenv';
 import { BN } from "ethereumjs-util";
 import { getWeb3 } from "./src/web3Provider";
@@ -28,7 +28,7 @@ const looksrareContract = "0x59728544b08ab483533076417fbbb2fd0b17ce3a"
 const NftContract = "0x34d85c9CDeB23FA97cb08333b511ac86E1C4E258" // Otherside
 const higerPriceIds = higherPriceNftIds ? higherPriceNftIds.split(",") : []
 
-const PRICE_RATIO_RANGE = _.map(priceRatioRange.split(","), (n) => {
+const PRICE_RATIO_RANGE = _.map(priceRatioRange.split(","), (n: string) => {
     return parseFloat(n)
 })
 
@@ -138,9 +138,10 @@ const listNfts = async(nftIds: string[], floorPrice: string): Promise<NFTPrice[]
         }
         logger.info(`Successfully listed tokens ${listings}`)
         let message = ''
-        forEach(listings, (list) => {
+        listings.forEach(list => {
             message += `${list.tokenId} @ list.price Ξ \n`
         })
+
         await serverChan.pushMessage("成功上架", message)
         return listings
     } catch (err) {

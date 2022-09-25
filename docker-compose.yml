@@ -4,6 +4,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      target: production
     container_name: looksrare-worker
+    env_file:
+      - .env
 volumes:
   notused:
