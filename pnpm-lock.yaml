@@ -5,7 +5,7 @@ specifiers:
   '@ethereumjs/common': ^2.6.5
   '@ethereumjs/tx': ^3.5.2
   '@looksrare/sdk': ^0.8.3
-  '@types/lodash': 4.14.185
+  '@types/lodash': 4.14.202
   '@types/node': ^18.7.20
   abi-decoder: ^2.4.0
   axios: ^0.27.2
@@ -35,7 +35,7 @@ dependencies:
   winston: 3.8.2
 
 devDependencies:
-  '@types/lodash': 4.14.185
+  '@types/lodash': 4.14.202
   '@types/node': 18.7.20
 
 packages:
@@ -440,8 +440,8 @@ packages:
       '@types/node': 18.7.20
     dev: false
 
-  /@types/lodash/4.14.185:
-    resolution: {integrity: sha512-evMDG1bC4rgQg4ku9tKpuMh5iBNEwNa3tf9zRHdP1qlv+1WUg44xat4IxCE14gIpZRGUUWAx2VhItCZc25NfMA==}
+  /@types/lodash/4.14.202:
+    resolution: {integrity: sha512-OvlIYQK9tNneDlS0VN54LLd5uiPCBOp7gS5Z0f1mjoJYBrtStzgmJBxONW3U6OZqdtNzZPmn9BS/7WI7BFFcFQ==}
     dev: true
 
   /@types/node/12.20.55:
