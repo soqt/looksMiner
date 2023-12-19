@@ -4,7 +4,7 @@ specifiers:
   '@alch/alchemy-web3': ^1.4.6
   '@ethereumjs/common': ^2.6.5
   '@ethereumjs/tx': ^3.5.2
-  '@looksrare/sdk': ^0.8.3
+  '@looksrare/sdk': ^0.12.0
   '@types/lodash': 4.14.185
   '@types/node': ^18.7.20
   abi-decoder: ^2.4.0
@@ -22,7 +22,7 @@ dependencies:
   '@alch/alchemy-web3': 1.4.6
   '@ethereumjs/common': 2.6.5
   '@ethereumjs/tx': 3.5.2
-  '@looksrare/sdk': 0.8.3_ethers@5.7.1
+  '@looksrare/sdk': 0.12.1_ethers@5.7.1
   abi-decoder: r2.cnpmjs.org/abi-decoder/2.4.0
   axios: 0.27.2
   axios-retry: 3.3.1
@@ -415,8 +415,8 @@ packages:
       '@ethersproject/strings': 5.7.0
     dev: false
 
-  /@looksrare/sdk/0.8.3_ethers@5.7.1:
-    resolution: {integrity: sha512-eSdEzPVbk6MjmAzcxBo4WbKk2Nh17QE8uxNGILWZV/URssEKXvgxvL4wD1T2Ounbt375NulaokenGjr/OXcuyQ==}
+  /@looksrare/sdk/0.12.1_ethers@5.7.1:
+    resolution: {integrity: sha512-OeSSFI7po3LVTNXqbEoiw77uYMHynxUz/VUtHFJnli8HiDeDETm/DH6IRfbjTed1l6d5IebzcZkyE5siwuVlJg==}
     peerDependencies:
       ethers: ^5.5.4
     dependencies:
