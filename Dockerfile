@@ -1,4 +1,4 @@
-FROM node:16-alpine3.15 AS base
+FROM node:18-alpine3.15 AS base
 
 # 安装Alphine必要apk包
 RUN apk add --no-cache python3 make g++ && rm -rf /var/cache/apk/*
