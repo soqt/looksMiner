@@ -12,7 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "@alch/alchemy-web3": "^1.4.6",
-    "@ethereumjs/common": "^2.6.5",
+    "@ethereumjs/common": "^4.0.0",
     "@ethereumjs/tx": "^3.5.2",
     "@looksrare/sdk": "^0.8.3",
     "abi-decoder": "^2.4.0",
