@@ -14,12 +14,12 @@ specifiers:
   ethereumjs-util: ^7.1.5
   ethers: ^5.7.1
   lodash: 4.17.21
-  web3: ^1.8.0
+  web3: ^4.0.0
   web3-utils: ^1.8.0
   winston: ^3.8.2
 
 dependencies:
-  '@alch/alchemy-web3': 1.4.6
+  '@alch/alchemy-web3': 1.4.6_typescript@5.3.3
   '@ethereumjs/common': 2.6.5
   '@ethereumjs/tx': 3.5.2
   '@looksrare/sdk': 0.8.3_ethers@5.7.1
@@ -30,7 +30,7 @@ dependencies:
   ethereumjs-util: 7.1.5
   ethers: 5.7.1
   lodash: r2.cnpmjs.org/lodash/4.17.21
-  web3: 1.8.0
+  web3: 4.3.0_typescript@5.3.3
   web3-utils: 1.8.0
   winston: 3.8.2
 
@@ -40,10 +40,14 @@ devDependencies:
 
 packages:
 
-  /@alch/alchemy-web3/1.4.6:
+  /@adraffy/ens-normalize/1.10.0:
+    resolution: {integrity: sha512-nA9XHtlAkYfJxY7bce8DcN7eKxWWCWkU+1GR9d+U6MbNpfwQp8TI7vqOsBsMcHoT4mBu2kypKoSKnghEzOOq5Q==}
+    dev: false
+
+  /@alch/alchemy-web3/1.4.6_typescript@5.3.3:
     resolution: {integrity: sha512-eWkWXplQ0b7V62XNfzxBkozOnK6kXgPlQJnnvGsrEzr+DldrtJKnAcSgANpfPyOivztk/26IW4SWtREPHVJwrg==}
     dependencies:
-      '@types/web3': r2.cnpmjs.org/@types/web3/1.2.2
+      '@types/web3': r2.cnpmjs.org/@types/web3/1.2.2_typescript@5.3.3
       assert-never: r2.cnpmjs.org/assert-never/1.2.1
       eventemitter3: r2.cnpmjs.org/eventemitter3/3.1.2
       fetch-ponyfill: r2.cnpmjs.org/fetch-ponyfill/6.1.1
@@ -63,7 +67,9 @@ packages:
       - bufferutil
       - encoding
       - supports-color
+      - typescript
       - utf-8-validate
+      - zod
     dev: false
 
   /@babel/runtime/7.19.0:
@@ -91,6 +97,12 @@ packages:
     dependencies:
       crc-32: 1.2.2
       ethereumjs-util: 7.1.5
+    dev: false
+
+  /@ethereumjs/rlp/4.0.1:
+    resolution: {integrity: sha512-tqsQiBQDQdmPWE1xkkBq4rlSW5QZpLOUJ5RJh2/9fug+q9tnUhuZoVLk7s0scUIKTOzEtR72DFBXI4WiZcMpvw==}
+    engines: {node: '>=14'}
+    hasBin: true
     dev: false
 
   /@ethereumjs/tx/3.5.2:
@@ -423,6 +435,36 @@ packages:
       ethers: 5.7.1
     dev: false
 
+  /@noble/curves/1.1.0:
+    resolution: {integrity: sha512-091oBExgENk/kGj3AZmtBDMpxQPDtxQABR2B9lb1JbVTs6ytdzZNwvhxQ4MWasRNEzlbEH8jCWFCwhF/Obj5AA==}
+    dependencies:
+      '@noble/hashes': 1.3.1
+    dev: false
+
+  /@noble/hashes/1.3.1:
+    resolution: {integrity: sha512-EbqwksQwz9xDRGfDST86whPBgM65E0OH/pCgqW0GBVzO22bNE+NuIbeTb714+IfSjU3aRk47EUvXIb5bTsenKA==}
+    engines: {node: '>= 16'}
+    dev: false
+
+  /@scure/base/1.1.5:
+    resolution: {integrity: sha512-Brj9FiG2W1MRQSTB212YVPRrcbjkv48FoZi/u4l/zds/ieRrqsh7aUf6CLwkAq61oKXr/ZlTzlY66gLIj3TFTQ==}
+    dev: false
+
+  /@scure/bip32/1.3.1:
+    resolution: {integrity: sha512-osvveYtyzdEVbt3OfwwXFr4P2iVBL5u1Q3q4ONBfDY/UpOuXmOlbgwc1xECEboY8wIays8Yt6onaWMUdUbfl0A==}
+    dependencies:
+      '@noble/curves': 1.1.0
+      '@noble/hashes': 1.3.1
+      '@scure/base': 1.1.5
+    dev: false
+
+  /@scure/bip39/1.2.1:
+    resolution: {integrity: sha512-Z3/Fsz1yr904dduJD0NpiyRHhRYHdcnyh73FZWiV+/qhWi83wNJ3NWolYqCEN+ZWsUz2TWwajJggcRE9r1zUYg==}
+    dependencies:
+      '@noble/hashes': 1.3.1
+      '@scure/base': 1.1.5
+    dev: false
+
   /@sindresorhus/is/4.6.0:
     resolution: {integrity: sha512-t09vSN3MdfsyCHoFcTRCH/iUtG7OJ0CsjzB8cjAmKc/va/kIgeDI/TxsigdncE/4be734m0cvIYwNaV4i2XqAw==}
     engines: {node: '>=10'}
@@ -451,6 +493,24 @@ packages:
   /@types/node/18.7.20:
     resolution: {integrity: sha512-adzY4vLLr5Uivmx8+zfSJ5fbdgKxX8UMtjtl+17n0B1q1Nz8JEmE151vefMdpD+1gyh+77weN4qEhej/O7budQ==}
 
+  /@types/ws/8.5.3:
+    resolution: {integrity: sha512-6YOoWjruKj1uLf3INHH7D3qTXwFfEsg1kf3c0uDdSBJwfa/llkwIjrAGV7j7mVgGNbzTQ3HiHKKDXl6bJPD97w==}
+    dependencies:
+      '@types/node': 18.7.20
+    dev: false
+
+  /abitype/0.7.1_typescript@5.3.3:
+    resolution: {integrity: sha512-VBkRHTDZf9Myaek/dO3yMmOzB/y2s3Zo6nVU7yaw1G+TvCHAjwaJzNGN9yo4K5D8bU/VZXKP1EJpRhFr862PlQ==}
+    peerDependencies:
+      typescript: '>=4.9.4'
+      zod: ^3 >=3.19.1
+    peerDependenciesMeta:
+      zod:
+        optional: true
+    dependencies:
+      typescript: 5.3.3
+    dev: false
+
   /accepts/1.3.8:
     resolution: {integrity: sha512-PYAthTa2m2VKxuvSD3DPC/Gy+U+sOA1LAuT8mkmRuvw+NACSaeXEQ+NHcVF7rONl6qcaxV3Uuemwawk+7+SJLw==}
     engines: {node: '>= 0.6'}
@@ -461,6 +521,11 @@ packages:
 
   /async/3.2.4:
     resolution: {integrity: sha512-iAB+JbDEGXhyIUavoDl9WP/Jj106Kz9DEn1DPgYw5ruDn0e3Wgi3sKFm55sASdGBNOQB8F59d9qQ7deqrHA8wQ==}
+    dev: false
+
+  /available-typed-arrays/1.0.5:
+    resolution: {integrity: sha512-DMD0KiN46eipeziST1LPP/STfDU0sufISXmjSgvVsoU2tqxctQeASejWcfNtxYKqETM1UxQ8sp2OrSBWpHY6sw==}
+    engines: {node: '>= 0.4'}
     dev: false
 
   /axios-retry/3.3.1:
@@ -531,9 +596,11 @@ packages:
     engines: {node: '>= 0.8'}
     dev: false
 
-  /cacheable-lookup/6.1.0:
-    resolution: {integrity: sha512-KJ/Dmo1lDDhmW2XDPMo+9oiy/CeqosPguPCrgcVzKyZrL6pM1gU2GmPY/xo6OQPTUaA/c0kwHuywB4E6nmT9ww==}
-    engines: {node: '>=10.6.0'}
+  /call-bind/1.0.2:
+    resolution: {integrity: sha512-7O+FbCihrB5WGbFYesctwmTKae6rOiIzmz1icreWJ+0aA7LJfuqhEso2T9ncpcFtzMQtzXf2QGGueWJGTYsqrA==}
+    dependencies:
+      function-bind: 1.1.1
+      get-intrinsic: 1.1.3
     dev: false
 
   /clone-response/1.0.3:
@@ -560,10 +627,10 @@ packages:
     hasBin: true
     dev: false
 
-  /cross-fetch/3.1.5:
-    resolution: {integrity: sha512-lvb1SBsI0Z7GDwmuid+mU3kWVBwTVUbe7S0H52yaaAdQOXq2YktTCZdlAcNKFzE6QtRz0snpw9bNiPeOIkkQvw==}
+  /cross-fetch/4.0.0:
+    resolution: {integrity: sha512-e4a5N8lVvuLgAWgnCrLr2PP0YyDOTHa9H/Rj54dirp61qXnNq46m82bRhNqIA5VccJtWBvPTFRV3TtvHUKPB1g==}
     dependencies:
-      node-fetch: 2.6.7
+      node-fetch: 2.7.0
     transitivePeerDependencies:
       - encoding
     dev: false
@@ -573,7 +640,7 @@ packages:
     engines: {node: '>= 0.4'}
     dependencies:
       has-property-descriptors: 1.0.0
-      object-keys: r2.cnpmjs.org/object-keys/1.1.1
+      object-keys: 1.1.1
     dev: false
 
   /destroy/1.2.0:
@@ -594,30 +661,39 @@ packages:
     resolution: {integrity: sha512-AyrnaKVpMzljIdwjzrj+LxGmj8ik2LckwXacHqrJJ/jxz6dDDBcZ7I7nlHM0FvEW8MfbWJwOd+yT2XzYW49Frw==}
     engines: {node: '>= 0.4'}
     dependencies:
-      call-bind: r2.cnpmjs.org/call-bind/1.0.2
-      es-to-primitive: r2.cnpmjs.org/es-to-primitive/1.2.1
-      function-bind: r2.cnpmjs.org/function-bind/1.1.1
-      function.prototype.name: r2.cnpmjs.org/function.prototype.name/1.1.5
+      call-bind: 1.0.2
+      es-to-primitive: 1.2.1
+      function-bind: 1.1.1
+      function.prototype.name: 1.1.5
       get-intrinsic: 1.1.3
-      get-symbol-description: r2.cnpmjs.org/get-symbol-description/1.0.0
-      has: r2.cnpmjs.org/has/1.0.3
+      get-symbol-description: 1.0.0
+      has: 1.0.3
       has-property-descriptors: 1.0.0
       has-symbols: 1.0.3
-      internal-slot: r2.cnpmjs.org/internal-slot/1.0.3
+      internal-slot: 1.0.3
       is-callable: 1.2.7
-      is-negative-zero: r2.cnpmjs.org/is-negative-zero/2.0.2
-      is-regex: r2.cnpmjs.org/is-regex/1.1.4
+      is-negative-zero: 2.0.2
+      is-regex: 1.1.4
       is-shared-array-buffer: 1.0.2
-      is-string: r2.cnpmjs.org/is-string/1.0.7
-      is-weakref: r2.cnpmjs.org/is-weakref/1.0.2
+      is-string: 1.0.7
+      is-weakref: 1.0.2
       object-inspect: 1.12.2
-      object-keys: r2.cnpmjs.org/object-keys/1.1.1
+      object-keys: 1.1.1
       object.assign: 4.1.4
       regexp.prototype.flags: 1.4.3
       safe-regex-test: 1.0.0
       string.prototype.trimend: 1.0.5
       string.prototype.trimstart: 1.0.5
       unbox-primitive: 1.0.2
+    dev: false
+
+  /es-to-primitive/1.2.1:
+    resolution: {integrity: sha512-QCOllgZJtaUo9miYBcLChTUaHNjJF3PYs1VidD7AwiEj1kYxKeQTctLAezAOH5ZKRH0g2IgPn6KwB4IT8iRpvA==}
+    engines: {node: '>= 0.4'}
+    dependencies:
+      is-callable: 1.2.7
+      is-date-object: 1.0.5
+      is-symbol: 1.0.4
     dev: false
 
   /es5-ext/0.10.62:
@@ -633,6 +709,15 @@ packages:
   /etag/1.8.1:
     resolution: {integrity: sha512-aIL5Fx7mawVa300al2BnEE4iNvo1qETxLrPI/o05L7z6go7fCw1J6EQmbK4FmJ2AS7kgVF/KEZWufBfdClMcPg==}
     engines: {node: '>= 0.6'}
+    dev: false
+
+  /ethereum-cryptography/2.1.2:
+    resolution: {integrity: sha512-Z5Ba0T0ImZ8fqXrJbpHcbpAvIswRte2wGNR/KePnu8GbbvgJ47lMxT/ZZPG6i9Jaht4azPDop4HaM00J0J59ug==}
+    dependencies:
+      '@noble/curves': 1.1.0
+      '@noble/hashes': 1.3.1
+      '@scure/bip32': 1.3.1
+      '@scure/bip39': 1.2.1
     dev: false
 
   /ethereumjs-util/7.1.5:
@@ -758,6 +843,26 @@ packages:
         optional: true
     dev: false
 
+  /for-each/0.3.3:
+    resolution: {integrity: sha512-jqYfLp7mo9vIyQf8ykW2v7A+2N4QjeCeI5+Dz9XraiO1ign81wjiH7Fb9vSOWvQfNtmSa4H2RoQTrrXivdUZmw==}
+    dependencies:
+      is-callable: 1.2.7
+    dev: false
+
+  /function-bind/1.1.1:
+    resolution: {integrity: sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==}
+    dev: false
+
+  /function.prototype.name/1.1.5:
+    resolution: {integrity: sha512-uN7m/BzVKQnCUF/iW8jYea67v++2u7m5UgENbHRtdDVclOUP+FMPlCNdmk0h/ysGyo2tavMJEDqJAkJdRa1vMA==}
+    engines: {node: '>= 0.4'}
+    dependencies:
+      call-bind: 1.0.2
+      define-properties: 1.1.4
+      es-abstract: 1.20.3
+      functions-have-names: 1.2.3
+    dev: false
+
   /functions-have-names/1.2.3:
     resolution: {integrity: sha512-xckBUXyTIqT97tq2x2AMb+g163b5JFysYk0x4qxNFwbfQkmNZoiRHb6sPzI9/QV33WeuvVYBUIiD4NzNIyqaRQ==}
     dev: false
@@ -765,9 +870,17 @@ packages:
   /get-intrinsic/1.1.3:
     resolution: {integrity: sha512-QJVz1Tj7MS099PevUG5jvnt9tSkXN8K14dxQlikJuPt4uD9hHAHjLyLBiLR5zELelBdD9QNRAXZzsJx0WaDL9A==}
     dependencies:
-      function-bind: r2.cnpmjs.org/function-bind/1.1.1
-      has: r2.cnpmjs.org/has/1.0.3
+      function-bind: 1.1.1
+      has: 1.0.3
       has-symbols: 1.0.3
+    dev: false
+
+  /get-symbol-description/1.0.0:
+    resolution: {integrity: sha512-2EmdH1YvIQiZpltCNgkuiUnyukzxM/R6NDJX31Ke3BG1Nq5b0S2PhX59UKi9vZpPDQVdqn+1IcaAwnzTT5vCjw==}
+    engines: {node: '>= 0.4'}
+    dependencies:
+      call-bind: 1.0.2
+      get-intrinsic: 1.1.3
     dev: false
 
   /got/11.8.5:
@@ -784,25 +897,6 @@ packages:
       http2-wrapper: r2.cnpmjs.org/http2-wrapper/1.0.3
       lowercase-keys: r2.cnpmjs.org/lowercase-keys/2.0.0
       p-cancelable: r2.cnpmjs.org/p-cancelable/2.1.1
-      responselike: 2.0.1
-    dev: false
-
-  /got/12.1.0:
-    resolution: {integrity: sha512-hBv2ty9QN2RdbJJMK3hesmSkFTjVIHyIDDbssCKnSmq62edGgImJWD10Eb1k77TiV1bxloxqcFAVK8+9pkhOig==}
-    engines: {node: '>=14.16'}
-    dependencies:
-      '@sindresorhus/is': 4.6.0
-      '@szmarczak/http-timer': r2.cnpmjs.org/@szmarczak/http-timer/5.0.1
-      '@types/cacheable-request': r2.cnpmjs.org/@types/cacheable-request/6.0.2
-      '@types/responselike': r2.cnpmjs.org/@types/responselike/1.0.0
-      cacheable-lookup: 6.1.0
-      cacheable-request: r2.cnpmjs.org/cacheable-request/7.0.2
-      decompress-response: r2.cnpmjs.org/decompress-response/6.0.0
-      form-data-encoder: r2.cnpmjs.org/form-data-encoder/1.7.1
-      get-stream: r2.cnpmjs.org/get-stream/6.0.1
-      http2-wrapper: 2.1.11
-      lowercase-keys: r2.cnpmjs.org/lowercase-keys/3.0.0
-      p-cancelable: r2.cnpmjs.org/p-cancelable/3.0.0
       responselike: 2.0.1
     dev: false
 
@@ -825,12 +919,53 @@ packages:
     engines: {node: '>= 0.4'}
     dev: false
 
-  /http2-wrapper/2.1.11:
-    resolution: {integrity: sha512-aNAk5JzLturWEUiuhAN73Jcbq96R7rTitAoXV54FYMatvihnpD2+6PUgU4ce3D/m5VDbw+F5CsyKSF176ptitQ==}
-    engines: {node: '>=10.19.0'}
+  /has-tostringtag/1.0.0:
+    resolution: {integrity: sha512-kFjcSNhnlGV1kyoGk7OXKSawH5JOb/LzUc5w9B02hOTO0dfFRjbHQKvg1d6cf3HbeUmtU9VbbV3qzZ2Teh97WQ==}
+    engines: {node: '>= 0.4'}
     dependencies:
-      quick-lru: r2.cnpmjs.org/quick-lru/5.1.1
-      resolve-alpn: r2.cnpmjs.org/resolve-alpn/1.2.1
+      has-symbols: 1.0.3
+    dev: false
+
+  /has/1.0.3:
+    resolution: {integrity: sha512-f2dvO0VU6Oej7RkWJGrehjbzMAjFp5/VKPp5tTpWIV4JHHZK1/BxbFRtf/siA2SWTe09caDmVtYYzWEIbBS4zw==}
+    engines: {node: '>= 0.4.0'}
+    dependencies:
+      function-bind: 1.1.1
+    dev: false
+
+  /inherits/2.0.4:
+    resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}
+    dev: false
+
+  /internal-slot/1.0.3:
+    resolution: {integrity: sha512-O0DB1JC/sPyZl7cIo78n5dR7eUSwwpYPiXRhTzNxZVAMUuB8vlnRFyLxdrVToks6XPLVnFfbzaVd5WLjhgg+vA==}
+    engines: {node: '>= 0.4'}
+    dependencies:
+      get-intrinsic: 1.1.3
+      has: 1.0.3
+      side-channel: 1.0.4
+    dev: false
+
+  /is-arguments/1.1.1:
+    resolution: {integrity: sha512-8Q7EARjzEnKpt/PCD7e1cgUS0a6X8u5tdSiMqXhojOdoV9TsMsiO+9VLC5vAmO8N7/GmXn7yjR8qnA6bVAEzfA==}
+    engines: {node: '>= 0.4'}
+    dependencies:
+      call-bind: 1.0.2
+      has-tostringtag: 1.0.0
+    dev: false
+
+  /is-bigint/1.0.4:
+    resolution: {integrity: sha512-zB9CruMamjym81i2JZ3UMn54PKGsQzsJeo6xvN3HJJ4CAsQNB6iRutp2To77OfCNuoxspsIhzaPoO1zyCEhFOg==}
+    dependencies:
+      has-bigints: 1.0.2
+    dev: false
+
+  /is-boolean-object/1.1.2:
+    resolution: {integrity: sha512-gDYaKHJmnj4aWxyj6YHyXVpdQawtVLHU5cb+eztPGczf6cjuTdwve5ZIEfgXqH4e57An1D1AKf8CZ3kYrQRqYA==}
+    engines: {node: '>= 0.4'}
+    dependencies:
+      call-bind: 1.0.2
+      has-tostringtag: 1.0.0
     dev: false
 
   /is-callable/1.2.7:
@@ -838,28 +973,83 @@ packages:
     engines: {node: '>= 0.4'}
     dev: false
 
+  /is-date-object/1.0.5:
+    resolution: {integrity: sha512-9YQaSxsAiSwcvS33MBk3wTCVnWK+HhF8VZR2jRxehM16QcVOdHqPn4VPHmRK4lSr38n9JriurInLcP90xsYNfQ==}
+    engines: {node: '>= 0.4'}
+    dependencies:
+      has-tostringtag: 1.0.0
+    dev: false
+
+  /is-generator-function/1.0.10:
+    resolution: {integrity: sha512-jsEjy9l3yiXEQ+PsXdmBwEPcOxaXWLspKdplFUVI9vq1iZgIekeC0L167qeu86czQaxed3q/Uzuw0swL0irL8A==}
+    engines: {node: '>= 0.4'}
+    dependencies:
+      has-tostringtag: 1.0.0
+    dev: false
+
+  /is-negative-zero/2.0.2:
+    resolution: {integrity: sha512-dqJvarLawXsFbNDeJW7zAz8ItJ9cd28YufuuFzh0G8pNHjJMnY08Dv7sYX2uF5UpQOwieAeOExEYAWWfu7ZZUA==}
+    engines: {node: '>= 0.4'}
+    dev: false
+
   /is-number-object/1.0.7:
     resolution: {integrity: sha512-k1U0IRzLMo7ZlYIfzRu23Oh6MiIFasgpb9X76eqfFZAqwH44UI4KTBvBYIZ1dSL9ZzChTB9ShHfLkR4pdW5krQ==}
     engines: {node: '>= 0.4'}
     dependencies:
-      has-tostringtag: r2.cnpmjs.org/has-tostringtag/1.0.0
+      has-tostringtag: 1.0.0
+    dev: false
+
+  /is-regex/1.1.4:
+    resolution: {integrity: sha512-kvRdxDsxZjhzUX07ZnLydzS1TU/TJlTUHHY4YLL87e37oUA49DfkLqgy+VjFocowy29cKvcSiu+kIv728jTTVg==}
+    engines: {node: '>= 0.4'}
+    dependencies:
+      call-bind: 1.0.2
+      has-tostringtag: 1.0.0
     dev: false
 
   /is-shared-array-buffer/1.0.2:
     resolution: {integrity: sha512-sqN2UDu1/0y6uvXyStCOzyhAjCSlHceFoMKJW8W9EU9cvic/QdsZ0kEU93HEy3IUEFZIiH/3w+AH/UQbPHNdhA==}
     dependencies:
-      call-bind: r2.cnpmjs.org/call-bind/1.0.2
+      call-bind: 1.0.2
+    dev: false
+
+  /is-string/1.0.7:
+    resolution: {integrity: sha512-tE2UXzivje6ofPW7l23cjDOMa09gb7xlAqG6jG5ej6uPV32TlWP3NKPigtaGeHNu9fohccRYvIiZMfOOnOYUtg==}
+    engines: {node: '>= 0.4'}
+    dependencies:
+      has-tostringtag: 1.0.0
+    dev: false
+
+  /is-symbol/1.0.4:
+    resolution: {integrity: sha512-C/CPBqKWnvdcxqIARxyOh4v1UUEOCHpgDa0WYgpKDFMszcrPcffg5uhwSgPCLD2WWxmq6isisz87tzT01tuGhg==}
+    engines: {node: '>= 0.4'}
+    dependencies:
+      has-symbols: 1.0.3
     dev: false
 
   /is-typed-array/1.1.9:
     resolution: {integrity: sha512-kfrlnTTn8pZkfpJMUgYD7YZ3qzeJgWUn8XfVYBARc4wnmNOmLbmuuaAs3q5fvB0UJOn6yHAKaGTPM7d6ezoD/A==}
     engines: {node: '>= 0.4'}
     dependencies:
-      available-typed-arrays: r2.cnpmjs.org/available-typed-arrays/1.0.5
-      call-bind: r2.cnpmjs.org/call-bind/1.0.2
+      available-typed-arrays: 1.0.5
+      call-bind: 1.0.2
       es-abstract: 1.20.3
-      for-each: r2.cnpmjs.org/for-each/0.3.3
-      has-tostringtag: r2.cnpmjs.org/has-tostringtag/1.0.0
+      for-each: 0.3.3
+      has-tostringtag: 1.0.0
+    dev: false
+
+  /is-weakref/1.0.2:
+    resolution: {integrity: sha512-qctsuLZmIQ0+vSSMfoVvyFe2+GSEvnmZ2ezTup1SBse9+twCCeial6EEi3Nc2KFcf6+qz2FBPnjXsk8xhKSaPQ==}
+    dependencies:
+      call-bind: 1.0.2
+    dev: false
+
+  /isomorphic-ws/5.0.0_ws@8.15.1:
+    resolution: {integrity: sha512-muId7Zzn9ywDsyXgTIafTry2sV3nySZeUDe6YedVd1Hvuuep5AsIlqK+XefWpYTyJG5e503F2xIuT2lcU6rCSw==}
+    peerDependencies:
+      ws: '*'
+    dependencies:
+      ws: 8.15.1
     dev: false
 
   /keyv/4.5.0:
@@ -918,6 +1108,18 @@ packages:
       whatwg-url: r2.cnpmjs.org/whatwg-url/5.0.0
     dev: false
 
+  /node-fetch/2.7.0:
+    resolution: {integrity: sha512-c4FRfUm/dbcWZ7U+1Wq0AwCyFL+3nt2bEw05wfxSz+DWpWsitgmSgYmy2dQdWyKC1694ELPqMs/YzUSNozLt8A==}
+    engines: {node: 4.x || >=6.0.0}
+    peerDependencies:
+      encoding: ^0.1.0
+    peerDependenciesMeta:
+      encoding:
+        optional: true
+    dependencies:
+      whatwg-url: 5.0.0
+    dev: false
+
   /node-gyp-build/4.5.0:
     resolution: {integrity: sha512-2iGbaQBV+ITgCz76ZEjmhUKAKVf7xfY1sRl4UiKQspfZMH2h06SyhNsnSVy50cwkFQDGLyif6m/6uFXHkOZ6rg==}
     hasBin: true
@@ -927,14 +1129,19 @@ packages:
     resolution: {integrity: sha512-z+cPxW0QGUp0mcqcsgQyLVRDoXFQbXOwBaqyF7VIgI4TWNQsDHrBpUQslRmIfAoYWdYzs6UlKJtB2XJpTaNSpQ==}
     dev: false
 
+  /object-keys/1.1.1:
+    resolution: {integrity: sha512-NuAESUOUMrlIXOfHKzD6bpPu3tYt3xvjNdRIQ+FeT0lNb4K8WR70CaDxhuNguS2XG+GjkyMwOzsN5ZktImfhLA==}
+    engines: {node: '>= 0.4'}
+    dev: false
+
   /object.assign/4.1.4:
     resolution: {integrity: sha512-1mxKf0e58bvyjSCtKYY4sRe9itRk3PJpquJOjeIkz885CczcI4IvJJDLPS72oowuSh+pBxUFROpX+TU++hxhZQ==}
     engines: {node: '>= 0.4'}
     dependencies:
-      call-bind: r2.cnpmjs.org/call-bind/1.0.2
+      call-bind: 1.0.2
       define-properties: 1.1.4
       has-symbols: 1.0.3
-      object-keys: r2.cnpmjs.org/object-keys/1.1.1
+      object-keys: 1.1.1
     dev: false
 
   /on-finished/2.4.1:
@@ -956,7 +1163,7 @@ packages:
     resolution: {integrity: sha512-wr7M2E0OFRfIfJZjKGieI8lBKb7fRCH4Fv5KNPEs7gJ8jadvotdsS08PzOKR7opXhZ/Xkjtt3WF9g38drmyRqQ==}
     engines: {node: '>=0.6'}
     dependencies:
-      side-channel: r2.cnpmjs.org/side-channel/1.0.4
+      side-channel: 1.0.4
     dev: false
 
   /qs/6.5.3:
@@ -978,7 +1185,7 @@ packages:
     resolution: {integrity: sha512-fjggEOO3slI6Wvgjwflkc4NFRCTZAu5CnNfBd5qOMYhWdn67nJBBu34/TkD++eeFmd8C9r9jfXJ27+nSiRkSUA==}
     engines: {node: '>= 0.4'}
     dependencies:
-      call-bind: r2.cnpmjs.org/call-bind/1.0.2
+      call-bind: 1.0.2
       define-properties: 1.1.4
       functions-have-names: 1.2.3
     dev: false
@@ -992,9 +1199,9 @@ packages:
   /safe-regex-test/1.0.0:
     resolution: {integrity: sha512-JBUUzyOgEwXQY1NuPtvcj/qcBDbDmEvWufhlnXZIm75DEHp+afM1r1ujJpJsV/gSM4t59tpDyPi1sd6ZaPFfsA==}
     dependencies:
-      call-bind: r2.cnpmjs.org/call-bind/1.0.2
+      call-bind: 1.0.2
       get-intrinsic: 1.1.3
-      is-regex: r2.cnpmjs.org/is-regex/1.1.4
+      is-regex: 1.1.4
     dev: false
 
   /safe-stable-stringify/2.4.0:
@@ -1045,6 +1252,18 @@ packages:
       - supports-color
     dev: false
 
+  /setimmediate/1.0.5:
+    resolution: {integrity: sha512-MATJdZp8sLqDl/68LfQmbP8zKPLQNV6BIZoIgrscFDQ+RsvK/BxeDQOgyxKKoh0y/8h3BqVFnCqQ/gd+reiIXA==}
+    dev: false
+
+  /side-channel/1.0.4:
+    resolution: {integrity: sha512-q5XPytqFEIKHkGdiMIrY10mvLRvnQh42/+GoBlFW3b2LXLE2xxJpZFdm94we0BaoV3RwJyGqg5wS7epxTv0Zvw==}
+    dependencies:
+      call-bind: 1.0.2
+      get-intrinsic: 1.1.3
+      object-inspect: 1.12.2
+    dev: false
+
   /simple-get/2.8.2:
     resolution: {integrity: sha512-Ijd/rV5o+mSBBs4F/x9oDPtTx9Zb6X9brmnXvMW4J7IR15ngi9q5xxqWBKU744jTZiaXtxaPL7uHG6vtN8kUkw==}
     dependencies:
@@ -1072,7 +1291,7 @@ packages:
   /string.prototype.trimend/1.0.5:
     resolution: {integrity: sha512-I7RGvmjV4pJ7O3kdf+LXFpVfdNOxtCW/2C8f6jNiW4+PQchwxkCDzlk1/7p+Wl4bqFIZeF47qAHXLuHHWKAxog==}
     dependencies:
-      call-bind: r2.cnpmjs.org/call-bind/1.0.2
+      call-bind: 1.0.2
       define-properties: 1.1.4
       es-abstract: 1.20.3
     dev: false
@@ -1080,7 +1299,7 @@ packages:
   /string.prototype.trimstart/1.0.5:
     resolution: {integrity: sha512-THx16TJCGlsN0o6dl2o6ncWUsdgnLRSA23rRE5pyGBw/mLr3Ej/R2LaqCtgP8VNMGZsvMWnf9ooZPyY2bHvUFg==}
     dependencies:
-      call-bind: r2.cnpmjs.org/call-bind/1.0.2
+      call-bind: 1.0.2
       define-properties: 1.1.4
       es-abstract: 1.20.3
     dev: false
@@ -1096,13 +1315,17 @@ packages:
       mime-types: 2.1.35
       mkdirp-promise: r2.cnpmjs.org/mkdirp-promise/5.0.1
       mock-fs: r2.cnpmjs.org/mock-fs/4.14.0
-      setimmediate: r2.cnpmjs.org/setimmediate/1.0.5
+      setimmediate: 1.0.5
       tar: r2.cnpmjs.org/tar/4.4.19
       xhr-request: r2.cnpmjs.org/xhr-request/1.1.0
     transitivePeerDependencies:
       - bufferutil
       - supports-color
       - utf-8-validate
+    dev: false
+
+  /tr46/0.0.3:
+    resolution: {integrity: sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==}
     dev: false
 
   /tslib/2.4.0:
@@ -1113,13 +1336,19 @@ packages:
     resolution: {integrity: sha512-dzlvlNlt6AXU7EBSfpAscydQ7gXB+pPGsPnfJnZpiNJBDj7IaJzQlBZYGdEi4R9HmPdBv2XmWJ6YUtoTa7lmCw==}
     dev: false
 
+  /typescript/5.3.3:
+    resolution: {integrity: sha512-pXWcraxM0uxAS+tN0AG/BF2TyqmHO014Z070UsJ+pFvYuRSq8KH8DmWpnbXe0pEPDHXZV3FcAbJkijJ5oNEnWw==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+    dev: false
+
   /unbox-primitive/1.0.2:
     resolution: {integrity: sha512-61pPlCD9h51VoreyJ0BReideM3MDKMKnh6+V9L08331ipq6Q8OFXZYiqP6n/tbHx4s5I9uRhcye6BrbkizkBDw==}
     dependencies:
-      call-bind: r2.cnpmjs.org/call-bind/1.0.2
+      call-bind: 1.0.2
       has-bigints: 1.0.2
       has-symbols: 1.0.3
-      which-boxed-primitive: r2.cnpmjs.org/which-boxed-primitive/1.0.2
+      which-boxed-primitive: 1.0.2
     dev: false
 
   /urijs/1.19.11:
@@ -1132,6 +1361,16 @@ packages:
     requiresBuild: true
     dependencies:
       node-gyp-build: 4.5.0
+    dev: false
+
+  /util/0.12.5:
+    resolution: {integrity: sha512-kZf/K6hEIrWHI6XqOFUiiMa+79wE/D8Q+NCNAWclkyg3b4d2k7s0QGepNjiABc+aR3N1PAyHL7p6UcLY6LmrnA==}
+    dependencies:
+      inherits: 2.0.4
+      is-arguments: 1.1.1
+      is-generator-function: 1.0.10
+      is-typed-array: 1.1.9
+      which-typed-array: 1.1.8
     dev: false
 
   /web3-bzz/1.7.1:
@@ -1148,34 +1387,12 @@ packages:
       - utf-8-validate
     dev: false
 
-  /web3-bzz/1.8.0:
-    resolution: {integrity: sha512-caDtdKeLi7+2Vb+y+cq2yyhkNjnxkFzVW0j1DtemarBg3dycG1iEl75CVQMLNO6Wkg+HH9tZtRnUyFIe5LIUeQ==}
-    engines: {node: '>=8.0.0'}
-    requiresBuild: true
-    dependencies:
-      '@types/node': 12.20.55
-      got: 12.1.0
-      swarm-js: 0.1.42
-    transitivePeerDependencies:
-      - bufferutil
-      - supports-color
-      - utf-8-validate
-    dev: false
-
   /web3-core-helpers/1.7.1:
     resolution: {integrity: sha512-xn7Sx+s4CyukOJdlW8bBBDnUCWndr+OCJAlUe/dN2wXiyaGRiCWRhuQZrFjbxLeBt1fYFH7uWyYHhYU6muOHgw==}
     engines: {node: '>=8.0.0'}
     dependencies:
       web3-eth-iban: 1.7.1
       web3-utils: 1.7.1
-    dev: false
-
-  /web3-core-helpers/1.8.0:
-    resolution: {integrity: sha512-nMAVwZB3rEp/khHI2BvFy0e/xCryf501p5NGjswmJtEM+Zrd3Biaw52JrB1qAZZIzCA8cmLKaOgdfamoDOpWdw==}
-    engines: {node: '>=8.0.0'}
-    dependencies:
-      web3-eth-iban: 1.8.0
-      web3-utils: 1.8.0
     dev: false
 
   /web3-core-method/1.7.1:
@@ -1189,26 +1406,8 @@ packages:
       web3-utils: 1.7.1
     dev: false
 
-  /web3-core-method/1.8.0:
-    resolution: {integrity: sha512-c94RAzo3gpXwf2rf8rL8C77jOzNWF4mXUoUfZYYsiY35cJFd46jQDPI00CB5+ZbICTiA5mlVzMj4e7jAsTqiLA==}
-    engines: {node: '>=8.0.0'}
-    dependencies:
-      '@ethersproject/transactions': 5.7.0
-      web3-core-helpers: 1.8.0
-      web3-core-promievent: 1.8.0
-      web3-core-subscriptions: 1.8.0
-      web3-utils: 1.8.0
-    dev: false
-
   /web3-core-promievent/1.7.1:
     resolution: {integrity: sha512-Vd+CVnpPejrnevIdxhCkzMEywqgVbhHk/AmXXceYpmwA6sX41c5a65TqXv1i3FWRJAz/dW7oKz9NAzRIBAO/kA==}
-    engines: {node: '>=8.0.0'}
-    dependencies:
-      eventemitter3: r2.cnpmjs.org/eventemitter3/4.0.4
-    dev: false
-
-  /web3-core-promievent/1.8.0:
-    resolution: {integrity: sha512-FGLyjAuOaAQ+ZhV6iuw9tg/9WvIkSZXKHQ4mdTyQ8MxVraOtFivOCbuLLsGgapfHYX+RPxsc1j1YzQjKoupagQ==}
     engines: {node: '>=8.0.0'}
     dependencies:
       eventemitter3: r2.cnpmjs.org/eventemitter3/4.0.4
@@ -1227,34 +1426,12 @@ packages:
       - supports-color
     dev: false
 
-  /web3-core-requestmanager/1.8.0:
-    resolution: {integrity: sha512-2AoYCs3Owl5foWcf4uKPONyqFygSl9T54L8b581U16nsUirjhoTUGK/PBhMDVcLCmW4QQmcY5A8oPFpkQc1TTg==}
-    engines: {node: '>=8.0.0'}
-    dependencies:
-      util: r2.cnpmjs.org/util/0.12.4
-      web3-core-helpers: 1.8.0
-      web3-providers-http: 1.8.0
-      web3-providers-ipc: 1.8.0
-      web3-providers-ws: 1.8.0
-    transitivePeerDependencies:
-      - encoding
-      - supports-color
-    dev: false
-
   /web3-core-subscriptions/1.7.1:
     resolution: {integrity: sha512-NZBsvSe4J+Wt16xCf4KEtBbxA9TOwSVr8KWfUQ0tC2KMdDYdzNswl0Q9P58xaVuNlJ3/BH+uDFZJJ5E61BSA1Q==}
     engines: {node: '>=8.0.0'}
     dependencies:
       eventemitter3: r2.cnpmjs.org/eventemitter3/4.0.4
       web3-core-helpers: 1.7.1
-    dev: false
-
-  /web3-core-subscriptions/1.8.0:
-    resolution: {integrity: sha512-7lHVRzDdg0+Gcog55lG6Q3D8JV+jN+4Ly6F8cSn9xFUAwOkdbgdWsjknQG7t7CDWy21DQkvdiY2BJF8S68AqOA==}
-    engines: {node: '>=8.0.0'}
-    dependencies:
-      eventemitter3: r2.cnpmjs.org/eventemitter3/4.0.4
-      web3-core-helpers: 1.8.0
     dev: false
 
   /web3-core/1.7.1:
@@ -1272,20 +1449,31 @@ packages:
       - supports-color
     dev: false
 
-  /web3-core/1.8.0:
-    resolution: {integrity: sha512-9sCA+Z02ci6zoY2bAquFiDjujRwmSKHiSGi4B8IstML8okSytnzXk1izHYSynE7ahIkguhjWAuXFvX76F5rAbA==}
-    engines: {node: '>=8.0.0'}
+  /web3-core/4.3.2:
+    resolution: {integrity: sha512-uIMVd/j4BgOnwfpY8ZT+QKubOyM4xohEhFZXz9xB8wimXWMMlYVlIK/TbfHqFolS9uOerdSGhsMbcK9lETae8g==}
+    engines: {node: '>=14', npm: '>=6.12.0'}
     dependencies:
-      '@types/bn.js': 5.1.1
-      '@types/node': 12.20.55
-      bignumber.js: 9.1.0
-      web3-core-helpers: 1.8.0
-      web3-core-method: 1.8.0
-      web3-core-requestmanager: 1.8.0
-      web3-utils: 1.8.0
+      web3-errors: 1.1.4
+      web3-eth-accounts: 4.1.0
+      web3-eth-iban: 4.0.7
+      web3-providers-http: 4.1.0
+      web3-providers-ws: 4.0.7
+      web3-types: 1.3.1
+      web3-utils: 4.1.0
+      web3-validator: 2.0.3
+    optionalDependencies:
+      web3-providers-ipc: 4.0.7
     transitivePeerDependencies:
+      - bufferutil
       - encoding
-      - supports-color
+      - utf-8-validate
+    dev: false
+
+  /web3-errors/1.1.4:
+    resolution: {integrity: sha512-WahtszSqILez+83AxGecVroyZsMuuRT+KmQp4Si5P4Rnqbczno1k748PCrZTS1J4UCPmXMG2/Vt+0Bz2zwXkwQ==}
+    engines: {node: '>=14', npm: '>=6.12.0'}
+    dependencies:
+      web3-types: 1.3.1
     dev: false
 
   /web3-eth-abi/1.7.1:
@@ -1302,6 +1490,20 @@ packages:
     dependencies:
       '@ethersproject/abi': 5.7.0
       web3-utils: 1.8.0
+    dev: false
+
+  /web3-eth-abi/4.1.4_typescript@5.3.3:
+    resolution: {integrity: sha512-YLOBVVxxxLYKXjaiwZjEWYEnkMmmrm0nswZsvzSsINy/UgbWbzfoiZU+zn4YNWIEhORhx1p37iS3u/dP6VyC2w==}
+    engines: {node: '>=14', npm: '>=6.12.0'}
+    dependencies:
+      abitype: 0.7.1_typescript@5.3.3
+      web3-errors: 1.1.4
+      web3-types: 1.3.1
+      web3-utils: 4.1.0
+      web3-validator: 2.0.3
+    transitivePeerDependencies:
+      - typescript
+      - zod
     dev: false
 
   /web3-eth-accounts/1.7.1:
@@ -1323,24 +1525,17 @@ packages:
       - supports-color
     dev: false
 
-  /web3-eth-accounts/1.8.0:
-    resolution: {integrity: sha512-HQ/MDSv4bexwJLvnqsM6xpGE7c2NVOqyhzOZFyMUKXbIwIq85T3TaLnM9pCN7XqMpDcfxqiZ3q43JqQVkzHdmw==}
-    engines: {node: '>=8.0.0'}
+  /web3-eth-accounts/4.1.0:
+    resolution: {integrity: sha512-UFtAsOANsvihTQ6SSvOKguupmQkResyR9M9JNuOxYpKh7+3W+sTnbLXw2UbOSYIsKlc1mpqqW9bVr1SjqHDpUQ==}
+    engines: {node: '>=14', npm: '>=6.12.0'}
     dependencies:
-      '@ethereumjs/common': 2.6.5
-      '@ethereumjs/tx': 3.5.2
-      crypto-browserify: r2.cnpmjs.org/crypto-browserify/3.12.0
-      eth-lib: r2.cnpmjs.org/eth-lib/0.2.8
-      ethereumjs-util: 7.1.5
-      scrypt-js: r2.cnpmjs.org/scrypt-js/3.0.1
-      uuid: r2.cnpmjs.org/uuid/3.3.2
-      web3-core: 1.8.0
-      web3-core-helpers: 1.8.0
-      web3-core-method: 1.8.0
-      web3-utils: 1.8.0
-    transitivePeerDependencies:
-      - encoding
-      - supports-color
+      '@ethereumjs/rlp': 4.0.1
+      crc-32: 1.2.2
+      ethereum-cryptography: 2.1.2
+      web3-errors: 1.1.4
+      web3-types: 1.3.1
+      web3-utils: 4.1.0
+      web3-validator: 2.0.3
     dev: false
 
   /web3-eth-contract/1.7.1:
@@ -1359,21 +1554,23 @@ packages:
       - supports-color
     dev: false
 
-  /web3-eth-contract/1.8.0:
-    resolution: {integrity: sha512-6xeXhW2YoCrz2Ayf2Vm4srWiMOB6LawkvxWJDnUWJ8SMATg4Pgu42C/j8rz/enXbYWt2IKuj0kk8+QszxQbK+Q==}
-    engines: {node: '>=8.0.0'}
+  /web3-eth-contract/4.1.4_typescript@5.3.3:
+    resolution: {integrity: sha512-tJ4z6QLgtu8EQu2sXnLA7g427oxmngnbAUh+9kJKbP6Yep/oe+z79PqJv7H3MwqwUNW9T+/FeB2PnSQSyxz6ig==}
+    engines: {node: '>=14', npm: '>=6.12.0'}
     dependencies:
-      '@types/bn.js': 5.1.1
-      web3-core: 1.8.0
-      web3-core-helpers: 1.8.0
-      web3-core-method: 1.8.0
-      web3-core-promievent: 1.8.0
-      web3-core-subscriptions: 1.8.0
-      web3-eth-abi: 1.8.0
-      web3-utils: 1.8.0
+      web3-core: 4.3.2
+      web3-errors: 1.1.4
+      web3-eth: 4.3.1_typescript@5.3.3
+      web3-eth-abi: 4.1.4_typescript@5.3.3
+      web3-types: 1.3.1
+      web3-utils: 4.1.0
+      web3-validator: 2.0.3
     transitivePeerDependencies:
+      - bufferutil
       - encoding
-      - supports-color
+      - typescript
+      - utf-8-validate
+      - zod
     dev: false
 
   /web3-eth-ens/1.7.1:
@@ -1392,21 +1589,25 @@ packages:
       - supports-color
     dev: false
 
-  /web3-eth-ens/1.8.0:
-    resolution: {integrity: sha512-/eFbQEwvsMOEiOhw9/iuRXCsPkqAmHHWuFOrThQkozRgcnSTRnvxkkRC/b6koiT5/HaKeUs4yQDg+/ixsIxZxA==}
-    engines: {node: '>=8.0.0'}
+  /web3-eth-ens/4.0.8_typescript@5.3.3:
+    resolution: {integrity: sha512-nj0JfeD45BbzVJcVYpUJnSo8iwDcY9CQ7CZhhIVVOFjvpMAPw0zEwjTvZEIQyCW61OoDG9xcBzwxe2tZoYhMRw==}
+    engines: {node: '>=14', npm: '>=6.12.0'}
     dependencies:
-      content-hash: r2.cnpmjs.org/content-hash/2.5.2
-      eth-ens-namehash: r2.cnpmjs.org/eth-ens-namehash/2.0.8
-      web3-core: 1.8.0
-      web3-core-helpers: 1.8.0
-      web3-core-promievent: 1.8.0
-      web3-eth-abi: 1.8.0
-      web3-eth-contract: 1.8.0
-      web3-utils: 1.8.0
+      '@adraffy/ens-normalize': 1.10.0
+      web3-core: 4.3.2
+      web3-errors: 1.1.4
+      web3-eth: 4.3.1_typescript@5.3.3
+      web3-eth-contract: 4.1.4_typescript@5.3.3
+      web3-net: 4.0.7
+      web3-types: 1.3.1
+      web3-utils: 4.1.0
+      web3-validator: 2.0.3
     transitivePeerDependencies:
+      - bufferutil
       - encoding
-      - supports-color
+      - typescript
+      - utf-8-validate
+      - zod
     dev: false
 
   /web3-eth-iban/1.7.1:
@@ -1417,12 +1618,14 @@ packages:
       web3-utils: 1.7.1
     dev: false
 
-  /web3-eth-iban/1.8.0:
-    resolution: {integrity: sha512-4RbvUxcMpo/e5811sE3a6inJ2H4+FFqUVmlRYs0RaXaxiHweahSRBNcpO0UWgmlePTolj0rXqPT2oEr0DuC8kg==}
-    engines: {node: '>=8.0.0'}
+  /web3-eth-iban/4.0.7:
+    resolution: {integrity: sha512-8weKLa9KuKRzibC87vNLdkinpUE30gn0IGY027F8doeJdcPUfsa4IlBgNC4k4HLBembBB2CTU0Kr/HAOqMeYVQ==}
+    engines: {node: '>=14', npm: '>=6.12.0'}
     dependencies:
-      bn.js: 5.2.1
-      web3-utils: 1.8.0
+      web3-errors: 1.1.4
+      web3-types: 1.3.1
+      web3-utils: 4.1.0
+      web3-validator: 2.0.3
     dev: false
 
   /web3-eth-personal/1.7.1:
@@ -1439,19 +1642,22 @@ packages:
       - supports-color
     dev: false
 
-  /web3-eth-personal/1.8.0:
-    resolution: {integrity: sha512-L7FT4nR3HmsfZyIAhFpEctKkYGOjRC2h6iFKs9gnFCHZga8yLcYcGaYOBIoYtaKom99MuGBoosayWt/Twh7F5A==}
-    engines: {node: '>=8.0.0'}
+  /web3-eth-personal/4.0.8_typescript@5.3.3:
+    resolution: {integrity: sha512-sXeyLKJ7ddQdMxz1BZkAwImjqh7OmKxhXoBNF3isDmD4QDpMIwv/t237S3q4Z0sZQamPa/pHebJRWVuvP8jZdw==}
+    engines: {node: '>=14', npm: '>=6.12.0'}
     dependencies:
-      '@types/node': 12.20.55
-      web3-core: 1.8.0
-      web3-core-helpers: 1.8.0
-      web3-core-method: 1.8.0
-      web3-net: 1.8.0
-      web3-utils: 1.8.0
+      web3-core: 4.3.2
+      web3-eth: 4.3.1_typescript@5.3.3
+      web3-rpc-methods: 1.1.4
+      web3-types: 1.3.1
+      web3-utils: 4.1.0
+      web3-validator: 2.0.3
     transitivePeerDependencies:
+      - bufferutil
       - encoding
-      - supports-color
+      - typescript
+      - utf-8-validate
+      - zod
     dev: false
 
   /web3-eth/1.7.1:
@@ -1474,25 +1680,27 @@ packages:
       - supports-color
     dev: false
 
-  /web3-eth/1.8.0:
-    resolution: {integrity: sha512-hist52os3OT4TQFB/GxPSMxTh3995sz6LPvQpPvj7ktSbpg9RNSFaSsPlCT63wUAHA3PZb1FemkAIeQM5t72Lw==}
-    engines: {node: '>=8.0.0'}
+  /web3-eth/4.3.1_typescript@5.3.3:
+    resolution: {integrity: sha512-zJir3GOXooHQT85JB8SrufE+Voo5TtXdjhf1D8IGXmxM8MrhI8AT+Pgt4siBTupJcu5hF17iGmTP/Nj2XnaibQ==}
+    engines: {node: '>=14', npm: '>=6.12.0'}
     dependencies:
-      web3-core: 1.8.0
-      web3-core-helpers: 1.8.0
-      web3-core-method: 1.8.0
-      web3-core-subscriptions: 1.8.0
-      web3-eth-abi: 1.8.0
-      web3-eth-accounts: 1.8.0
-      web3-eth-contract: 1.8.0
-      web3-eth-ens: 1.8.0
-      web3-eth-iban: 1.8.0
-      web3-eth-personal: 1.8.0
-      web3-net: 1.8.0
-      web3-utils: 1.8.0
+      setimmediate: 1.0.5
+      web3-core: 4.3.2
+      web3-errors: 1.1.4
+      web3-eth-abi: 4.1.4_typescript@5.3.3
+      web3-eth-accounts: 4.1.0
+      web3-net: 4.0.7
+      web3-providers-ws: 4.0.7
+      web3-rpc-methods: 1.1.4
+      web3-types: 1.3.1
+      web3-utils: 4.1.0
+      web3-validator: 2.0.3
     transitivePeerDependencies:
+      - bufferutil
       - encoding
-      - supports-color
+      - typescript
+      - utf-8-validate
+      - zod
     dev: false
 
   /web3-net/1.7.1:
@@ -1506,16 +1714,18 @@ packages:
       - supports-color
     dev: false
 
-  /web3-net/1.8.0:
-    resolution: {integrity: sha512-kX6EAacK7QrOe7DOh0t5yHS5q2kxZmTCxPVwSz9io9xBeE4n4UhmzGJ/VfhP2eM3OPKYeypcR3LEO6zZ8xn2vw==}
-    engines: {node: '>=8.0.0'}
+  /web3-net/4.0.7:
+    resolution: {integrity: sha512-SzEaXFrBjY25iQGk5myaOfO9ZyfTwQEa4l4Ps4HDNVMibgZji3WPzpjq8zomVHMwi8bRp6VV7YS71eEsX7zLow==}
+    engines: {node: '>=14', npm: '>=6.12.0'}
     dependencies:
-      web3-core: 1.8.0
-      web3-core-method: 1.8.0
-      web3-utils: 1.8.0
+      web3-core: 4.3.2
+      web3-rpc-methods: 1.1.4
+      web3-types: 1.3.1
+      web3-utils: 4.1.0
     transitivePeerDependencies:
+      - bufferutil
       - encoding
-      - supports-color
+      - utf-8-validate
     dev: false
 
   /web3-providers-http/1.7.1:
@@ -1526,14 +1736,14 @@ packages:
       xhr2-cookies: r2.cnpmjs.org/xhr2-cookies/1.1.0
     dev: false
 
-  /web3-providers-http/1.8.0:
-    resolution: {integrity: sha512-/MqxwRzExohBWW97mqlCSW/+NHydGRyoEDUS1bAIF2YjfKFwyRtHgrEzOojzkC9JvB+8LofMvbXk9CcltpZapw==}
-    engines: {node: '>=8.0.0'}
+  /web3-providers-http/4.1.0:
+    resolution: {integrity: sha512-6qRUGAhJfVQM41E5t+re5IHYmb5hSaLc02BE2MaRQsz2xKA6RjmHpOA5h/+ojJxEpI9NI2CrfDKOAgtJfoUJQg==}
+    engines: {node: '>=14', npm: '>=6.12.0'}
     dependencies:
-      abortcontroller-polyfill: r2.cnpmjs.org/abortcontroller-polyfill/1.7.3
-      cross-fetch: 3.1.5
-      es6-promise: r2.cnpmjs.org/es6-promise/4.2.8
-      web3-core-helpers: 1.8.0
+      cross-fetch: 4.0.0
+      web3-errors: 1.1.4
+      web3-types: 1.3.1
+      web3-utils: 4.1.0
     transitivePeerDependencies:
       - encoding
     dev: false
@@ -1546,13 +1756,16 @@ packages:
       web3-core-helpers: 1.7.1
     dev: false
 
-  /web3-providers-ipc/1.8.0:
-    resolution: {integrity: sha512-tAXHtVXNUOgehaBU8pzAlB3qhjn/PRpjdzEjzHNFqtRRTwzSEKOJxFeEhaUA4FzHnTlbnrs8ujHWUitcp1elfg==}
-    engines: {node: '>=8.0.0'}
+  /web3-providers-ipc/4.0.7:
+    resolution: {integrity: sha512-YbNqY4zUvIaK2MHr1lQFE53/8t/ejHtJchrWn9zVbFMGXlTsOAbNoIoZWROrg1v+hCBvT2c9z8xt7e/+uz5p1g==}
+    engines: {node: '>=14', npm: '>=6.12.0'}
+    requiresBuild: true
     dependencies:
-      oboe: r2.cnpmjs.org/oboe/2.1.5
-      web3-core-helpers: 1.8.0
+      web3-errors: 1.1.4
+      web3-types: 1.3.1
+      web3-utils: 4.1.0
     dev: false
+    optional: true
 
   /web3-providers-ws/1.7.1:
     resolution: {integrity: sha512-Uj0n5hdrh0ESkMnTQBsEUS2u6Unqdc7Pe4Zl+iZFb7Yn9cIGsPJBl7/YOP4137EtD5ueXAv+MKwzcelpVhFiFg==}
@@ -1565,15 +1778,32 @@ packages:
       - supports-color
     dev: false
 
-  /web3-providers-ws/1.8.0:
-    resolution: {integrity: sha512-bcZtSifsqyJxwkfQYamfdIRp4nhj9eJd7cxHg1uUkfLJK125WP96wyJL1xbPt7qt0MpfnTFn8/UuIqIB6nFENg==}
-    engines: {node: '>=8.0.0'}
+  /web3-providers-ws/4.0.7:
+    resolution: {integrity: sha512-n4Dal9/rQWjS7d6LjyEPM2R458V8blRm0eLJupDEJOOIBhGYlxw5/4FthZZ/cqB7y/sLVi7K09DdYx2MeRtU5w==}
+    engines: {node: '>=14', npm: '>=6.12.0'}
     dependencies:
-      eventemitter3: r2.cnpmjs.org/eventemitter3/4.0.4
-      web3-core-helpers: 1.8.0
-      websocket: r2.cnpmjs.org/websocket/1.0.34
+      '@types/ws': 8.5.3
+      isomorphic-ws: 5.0.0_ws@8.15.1
+      web3-errors: 1.1.4
+      web3-types: 1.3.1
+      web3-utils: 4.1.0
+      ws: 8.15.1
     transitivePeerDependencies:
-      - supports-color
+      - bufferutil
+      - utf-8-validate
+    dev: false
+
+  /web3-rpc-methods/1.1.4:
+    resolution: {integrity: sha512-LTFNg4LFaeU8K9ecuT8fHDp/LOXyxCneeZjCrRYIW1u82Ly52SrY55FIzMIISGoG/iT5Wh7UiHOB3CQsWLBmbQ==}
+    engines: {node: '>=14', npm: '>=6.12.0'}
+    dependencies:
+      web3-core: 4.3.2
+      web3-types: 1.3.1
+      web3-validator: 2.0.3
+    transitivePeerDependencies:
+      - bufferutil
+      - encoding
+      - utf-8-validate
     dev: false
 
   /web3-shh/1.7.1:
@@ -1589,18 +1819,9 @@ packages:
       - supports-color
     dev: false
 
-  /web3-shh/1.8.0:
-    resolution: {integrity: sha512-DNRgSa9Jf9xYFUGKSMylrf+zt3MPjhI2qF+UWX07o0y3+uf8zalDGiJOWvIS4upAsdPiKKVJ7co+Neof47OMmg==}
-    engines: {node: '>=8.0.0'}
-    requiresBuild: true
-    dependencies:
-      web3-core: 1.8.0
-      web3-core-method: 1.8.0
-      web3-core-subscriptions: 1.8.0
-      web3-net: 1.8.0
-    transitivePeerDependencies:
-      - encoding
-      - supports-color
+  /web3-types/1.3.1:
+    resolution: {integrity: sha512-8fXi7h/t95VKRtgU4sxprLPZpsTh3jYDfSghshIDBgUD/OoGe5S+syP24SUzBZYllZ/L+hMr2gdp/0bGJa8pYQ==}
+    engines: {node: '>=14', npm: '>=6.12.0'}
     dev: false
 
   /web3-utils/1.7.1:
@@ -1629,6 +1850,27 @@ packages:
       utf8: r2.cnpmjs.org/utf8/3.0.0
     dev: false
 
+  /web3-utils/4.1.0:
+    resolution: {integrity: sha512-+VJWR6FtCsgwuJr5tvSvQlSEG06586df8h2CxGc9tcNtIDyJKNkSDDWJkdNPvyDhhXFzQYFh8QOGymD1CIP6fw==}
+    engines: {node: '>=14', npm: '>=6.12.0'}
+    dependencies:
+      ethereum-cryptography: 2.1.2
+      web3-errors: 1.1.4
+      web3-types: 1.3.1
+      web3-validator: 2.0.3
+    dev: false
+
+  /web3-validator/2.0.3:
+    resolution: {integrity: sha512-fJbAQh+9LSNWy+l5Ze6HABreml8fra98o5+vS073T35jUcLbRZ0IOjF/ZPJhJNbJDt+jP1vseZsc3z3uX9mxxQ==}
+    engines: {node: '>=14', npm: '>=6.12.0'}
+    dependencies:
+      ethereum-cryptography: 2.1.2
+      util: 0.12.5
+      web3-errors: 1.1.4
+      web3-types: 1.3.1
+      zod: 3.22.4
+    dev: false
+
   /web3/1.7.1:
     resolution: {integrity: sha512-RKVdyZ5FuVEykj62C1o2tc0teJciSOh61jpVB9yb344dBHO3ZV4XPPP24s/PPqIMXmVFN00g2GD9M/v1SoHO/A==}
     engines: {node: '>=8.0.0'}
@@ -1647,34 +1889,64 @@ packages:
       - utf-8-validate
     dev: false
 
-  /web3/1.8.0:
-    resolution: {integrity: sha512-sldr9stK/SALSJTgI/8qpnDuBJNMGjVR84hJ+AcdQ+MLBGLMGsCDNubCoyO6qgk1/Y9SQ7ignegOI/7BPLoiDA==}
-    engines: {node: '>=8.0.0'}
-    requiresBuild: true
+  /web3/4.3.0_typescript@5.3.3:
+    resolution: {integrity: sha512-YiLCsb5wmgJlSxRLzt7Z7H+CmlVVIKD8VaUQaZ+xKVG3Q7CpsO5Z6jmeKnlr6M9c6fDDsDnRM6G8g+nchZehbA==}
+    engines: {node: '>=14.0.0', npm: '>=6.12.0'}
     dependencies:
-      web3-bzz: 1.8.0
-      web3-core: 1.8.0
-      web3-eth: 1.8.0
-      web3-eth-personal: 1.8.0
-      web3-net: 1.8.0
-      web3-shh: 1.8.0
-      web3-utils: 1.8.0
+      web3-core: 4.3.2
+      web3-errors: 1.1.4
+      web3-eth: 4.3.1_typescript@5.3.3
+      web3-eth-abi: 4.1.4_typescript@5.3.3
+      web3-eth-accounts: 4.1.0
+      web3-eth-contract: 4.1.4_typescript@5.3.3
+      web3-eth-ens: 4.0.8_typescript@5.3.3
+      web3-eth-iban: 4.0.7
+      web3-eth-personal: 4.0.8_typescript@5.3.3
+      web3-net: 4.0.7
+      web3-providers-http: 4.1.0
+      web3-providers-ws: 4.0.7
+      web3-rpc-methods: 1.1.4
+      web3-types: 1.3.1
+      web3-utils: 4.1.0
+      web3-validator: 2.0.3
     transitivePeerDependencies:
       - bufferutil
       - encoding
-      - supports-color
+      - typescript
       - utf-8-validate
+      - zod
+    dev: false
+
+  /webidl-conversions/3.0.1:
+    resolution: {integrity: sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==}
+    dev: false
+
+  /whatwg-url/5.0.0:
+    resolution: {integrity: sha512-saE57nupxk6v3HY35+jzBwYa0rKSy0XR8JSxZPwgLr7ys0IBzhGviA1/TUGJLmSVqs8pb9AnvICXEuOHLprYTw==}
+    dependencies:
+      tr46: 0.0.3
+      webidl-conversions: 3.0.1
+    dev: false
+
+  /which-boxed-primitive/1.0.2:
+    resolution: {integrity: sha512-bwZdv0AKLpplFY2KZRX6TvyuN7ojjr7lwkg6ml0roIy9YeuSr7JS372qlNW18UQYzgYK9ziGcerWqZOmEn9VNg==}
+    dependencies:
+      is-bigint: 1.0.4
+      is-boolean-object: 1.1.2
+      is-number-object: 1.0.7
+      is-string: 1.0.7
+      is-symbol: 1.0.4
     dev: false
 
   /which-typed-array/1.1.8:
     resolution: {integrity: sha512-Jn4e5PItbcAHyLoRDwvPj1ypu27DJbtdYXUa5zsinrUx77Uvfb0cXwwnGMTn7cjUfhhqgVQnVJCwF+7cgU7tpw==}
     engines: {node: '>= 0.4'}
     dependencies:
-      available-typed-arrays: r2.cnpmjs.org/available-typed-arrays/1.0.5
-      call-bind: r2.cnpmjs.org/call-bind/1.0.2
+      available-typed-arrays: 1.0.5
+      call-bind: 1.0.2
       es-abstract: 1.20.3
-      for-each: r2.cnpmjs.org/for-each/0.3.3
-      has-tostringtag: r2.cnpmjs.org/has-tostringtag/1.0.0
+      for-each: 0.3.3
+      has-tostringtag: 1.0.0
       is-typed-array: 1.1.9
     dev: false
 
@@ -1733,6 +2005,23 @@ packages:
         optional: true
     dev: false
 
+  /ws/8.15.1:
+    resolution: {integrity: sha512-W5OZiCjXEmk0yZ66ZN82beM5Sz7l7coYxpRkzS+p9PP+ToQry8szKh+61eNktr7EA9DOwvFGhfC605jDHbP6QQ==}
+    engines: {node: '>=10.0.0'}
+    peerDependencies:
+      bufferutil: ^4.0.1
+      utf-8-validate: '>=5.0.2'
+    peerDependenciesMeta:
+      bufferutil:
+        optional: true
+      utf-8-validate:
+        optional: true
+    dev: false
+
+  /zod/3.22.4:
+    resolution: {integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==}
+    dev: false
+
   r2.cnpmjs.org/@ethersproject/abi/5.0.7:
     resolution: {integrity: sha512-Cqktk+hSIckwP/W8O47Eef60VwmoSC/L3lY0+dIBhQPCNn9E4V7rwmm2aFrNRRDJfFlGuZ1khkQUOc3oBX+niw==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/@ethersproject/abi/-/abi-5.0.7.tgz}
     name: '@ethersproject/abi'
@@ -1770,15 +2059,6 @@ packages:
     name: '@szmarczak/http-timer'
     version: 4.0.6
     engines: {node: '>=10'}
-    dependencies:
-      defer-to-connect: r2.cnpmjs.org/defer-to-connect/2.0.1
-    dev: false
-
-  r2.cnpmjs.org/@szmarczak/http-timer/5.0.1:
-    resolution: {integrity: sha512-+PmQX0PiAYPMeVYe237LJAYvOMYW1j2rH5YROyS3b4CTVJum34HfRvKvAzozHAQG0TnHNdUfY9nCeUyRAs//cw==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/@szmarczak/http-timer/-/http-timer-5.0.1.tgz}
-    name: '@szmarczak/http-timer'
-    version: 5.0.1
-    engines: {node: '>=14.16'}
     dependencies:
       defer-to-connect: r2.cnpmjs.org/defer-to-connect/2.0.1
     dev: false
@@ -1832,18 +2112,20 @@ packages:
       '@types/node': 18.7.20
     dev: false
 
-  r2.cnpmjs.org/@types/web3/1.2.2:
+  r2.cnpmjs.org/@types/web3/1.2.2_typescript@5.3.3:
     resolution: {integrity: sha512-eFiYJKggNrOl0nsD+9cMh2MLk4zVBfXfGnVeRFbpiZzBE20eet4KLA3fXcjSuHaBn0RnQzwLAGdgzgzdet4C0A==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/@types/web3/-/web3-1.2.2.tgz}
+    id: r2.cnpmjs.org/@types/web3/1.2.2
     name: '@types/web3'
     version: 1.2.2
     deprecated: This is a stub types definition. web3 provides its own type definitions, so you do not need this installed.
     dependencies:
-      web3: 1.8.0
+      web3: 4.3.0_typescript@5.3.3
     transitivePeerDependencies:
       - bufferutil
       - encoding
-      - supports-color
+      - typescript
       - utf-8-validate
+      - zod
     dev: false
 
   r2.cnpmjs.org/abi-decoder/2.4.0:
@@ -1853,12 +2135,6 @@ packages:
     dependencies:
       web3-eth-abi: 1.8.0
       web3-utils: 1.8.0
-    dev: false
-
-  r2.cnpmjs.org/abortcontroller-polyfill/1.7.3:
-    resolution: {integrity: sha512-zetDJxd89y3X99Kvo4qFx8GKlt6GsvN3UcRZHwU6iFA/0KiOmhkTVhe8oRoTBiTVPZu09x3vCra47+w8Yz1+2Q==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/abortcontroller-polyfill/-/abortcontroller-polyfill-1.7.3.tgz}
-    name: abortcontroller-polyfill
-    version: 1.7.3
     dev: false
 
   r2.cnpmjs.org/aes-js/3.0.0:
@@ -1890,7 +2166,7 @@ packages:
     version: 5.4.1
     dependencies:
       bn.js: r2.cnpmjs.org/bn.js/4.12.0
-      inherits: r2.cnpmjs.org/inherits/2.0.4
+      inherits: 2.0.4
       minimalistic-assert: r2.cnpmjs.org/minimalistic-assert/1.0.1
       safer-buffer: r2.cnpmjs.org/safer-buffer/2.1.2
     dev: false
@@ -1926,13 +2202,6 @@ packages:
     resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/asynckit/-/asynckit-0.4.0.tgz}
     name: asynckit
     version: 0.4.0
-    dev: false
-
-  r2.cnpmjs.org/available-typed-arrays/1.0.5:
-    resolution: {integrity: sha512-DMD0KiN46eipeziST1LPP/STfDU0sufISXmjSgvVsoU2tqxctQeASejWcfNtxYKqETM1UxQ8sp2OrSBWpHY6sw==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/available-typed-arrays/-/available-typed-arrays-1.0.5.tgz}
-    name: available-typed-arrays
-    version: 1.0.5
-    engines: {node: '>= 0.4'}
     dev: false
 
   r2.cnpmjs.org/aws-sign2/0.7.0:
@@ -2029,7 +2298,7 @@ packages:
     dependencies:
       cipher-base: r2.cnpmjs.org/cipher-base/1.0.4
       des.js: r2.cnpmjs.org/des.js/1.0.1
-      inherits: r2.cnpmjs.org/inherits/2.0.4
+      inherits: 2.0.4
       safe-buffer: r2.cnpmjs.org/safe-buffer/5.2.1
     dev: false
 
@@ -2052,7 +2321,7 @@ packages:
       create-hash: r2.cnpmjs.org/create-hash/1.2.0
       create-hmac: r2.cnpmjs.org/create-hmac/1.1.7
       elliptic: r2.cnpmjs.org/elliptic/6.5.4
-      inherits: r2.cnpmjs.org/inherits/2.0.4
+      inherits: 2.0.4
       parse-asn1: r2.cnpmjs.org/parse-asn1/5.1.6
       readable-stream: r2.cnpmjs.org/readable-stream/3.6.0
       safe-buffer: r2.cnpmjs.org/safe-buffer/5.2.1
@@ -2123,15 +2392,6 @@ packages:
       lowercase-keys: r2.cnpmjs.org/lowercase-keys/2.0.0
       normalize-url: r2.cnpmjs.org/normalize-url/6.1.0
       responselike: 2.0.1
-    dev: false
-
-  r2.cnpmjs.org/call-bind/1.0.2:
-    resolution: {integrity: sha512-7O+FbCihrB5WGbFYesctwmTKae6rOiIzmz1icreWJ+0aA7LJfuqhEso2T9ncpcFtzMQtzXf2QGGueWJGTYsqrA==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/call-bind/-/call-bind-1.0.2.tgz}
-    name: call-bind
-    version: 1.0.2
-    dependencies:
-      function-bind: r2.cnpmjs.org/function-bind/1.1.1
-      get-intrinsic: 1.1.3
     dev: false
 
   r2.cnpmjs.org/caseless/0.12.0:
@@ -2321,7 +2581,7 @@ packages:
       create-hash: r2.cnpmjs.org/create-hash/1.2.0
       create-hmac: r2.cnpmjs.org/create-hmac/1.1.7
       diffie-hellman: r2.cnpmjs.org/diffie-hellman/5.0.3
-      inherits: r2.cnpmjs.org/inherits/2.0.4
+      inherits: 2.0.4
       pbkdf2: r2.cnpmjs.org/pbkdf2/3.1.2
       public-encrypt: r2.cnpmjs.org/public-encrypt/4.0.3
       randombytes: r2.cnpmjs.org/randombytes/2.1.0
@@ -2416,7 +2676,7 @@ packages:
     name: des.js
     version: 1.0.1
     dependencies:
-      inherits: r2.cnpmjs.org/inherits/2.0.4
+      inherits: 2.0.4
       minimalistic-assert: r2.cnpmjs.org/minimalistic-assert/1.0.1
     dev: false
 
@@ -2460,7 +2720,7 @@ packages:
       brorand: r2.cnpmjs.org/brorand/1.1.0
       hash.js: r2.cnpmjs.org/hash.js/1.1.7
       hmac-drbg: r2.cnpmjs.org/hmac-drbg/1.0.1
-      inherits: r2.cnpmjs.org/inherits/2.0.4
+      inherits: 2.0.4
       minimalistic-assert: r2.cnpmjs.org/minimalistic-assert/1.0.1
       minimalistic-crypto-utils: r2.cnpmjs.org/minimalistic-crypto-utils/1.0.1
     dev: false
@@ -2486,17 +2746,6 @@ packages:
       once: r2.cnpmjs.org/once/1.4.0
     dev: false
 
-  r2.cnpmjs.org/es-to-primitive/1.2.1:
-    resolution: {integrity: sha512-QCOllgZJtaUo9miYBcLChTUaHNjJF3PYs1VidD7AwiEj1kYxKeQTctLAezAOH5ZKRH0g2IgPn6KwB4IT8iRpvA==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/es-to-primitive/-/es-to-primitive-1.2.1.tgz}
-    name: es-to-primitive
-    version: 1.2.1
-    engines: {node: '>= 0.4'}
-    dependencies:
-      is-callable: 1.2.7
-      is-date-object: r2.cnpmjs.org/is-date-object/1.0.5
-      is-symbol: r2.cnpmjs.org/is-symbol/1.0.4
-    dev: false
-
   r2.cnpmjs.org/es6-iterator/2.0.3:
     resolution: {integrity: sha512-zw4SRzoUkd+cl+ZoE15A9o1oQd920Bb0iOJMQkQhl3jNc03YqVjAhG7scf9C5KWRU/R13Orf588uCC6525o02g==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/es6-iterator/-/es6-iterator-2.0.3.tgz}
     name: es6-iterator
@@ -2505,12 +2754,6 @@ packages:
       d: r2.cnpmjs.org/d/1.0.1
       es5-ext: 0.10.62
       es6-symbol: r2.cnpmjs.org/es6-symbol/3.1.3
-    dev: false
-
-  r2.cnpmjs.org/es6-promise/4.2.8:
-    resolution: {integrity: sha512-HJDGx5daxeIvxdBxvG2cb9g4tEvwIk3i8+nhX0yGrYmZUzbkdg8QbDevheDB8gd0//uPj4c1EQua8Q+MViT0/w==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/es6-promise/-/es6-promise-4.2.8.tgz}
-    name: es6-promise
-    version: 4.2.8
     dev: false
 
   r2.cnpmjs.org/es6-symbol/3.1.3:
@@ -2666,24 +2909,10 @@ packages:
     version: 1.1.0
     dev: false
 
-  r2.cnpmjs.org/for-each/0.3.3:
-    resolution: {integrity: sha512-jqYfLp7mo9vIyQf8ykW2v7A+2N4QjeCeI5+Dz9XraiO1ign81wjiH7Fb9vSOWvQfNtmSa4H2RoQTrrXivdUZmw==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/for-each/-/for-each-0.3.3.tgz}
-    name: for-each
-    version: 0.3.3
-    dependencies:
-      is-callable: 1.2.7
-    dev: false
-
   r2.cnpmjs.org/forever-agent/0.6.1:
     resolution: {integrity: sha512-j0KLYPhm6zeac4lz3oJ3o65qvgQCcPubiyotZrXqEaG4hNagNYO8qdlUrX5vwqv9ohqeT/Z3j6+yW067yWWdUw==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/forever-agent/-/forever-agent-0.6.1.tgz}
     name: forever-agent
     version: 0.6.1
-    dev: false
-
-  r2.cnpmjs.org/form-data-encoder/1.7.1:
-    resolution: {integrity: sha512-EFRDrsMm/kyqbTQocNvRXMLjc7Es2Vk+IQFx/YW7hkUH1eBl4J1fqiP34l74Yt0pFLCNpc06fkbVk00008mzjg==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/form-data-encoder/-/form-data-encoder-1.7.1.tgz}
-    name: form-data-encoder
-    version: 1.7.1
     dev: false
 
   r2.cnpmjs.org/form-data/2.3.3:
@@ -2740,24 +2969,6 @@ packages:
       minipass: r2.cnpmjs.org/minipass/2.9.0
     dev: false
 
-  r2.cnpmjs.org/function-bind/1.1.1:
-    resolution: {integrity: sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/function-bind/-/function-bind-1.1.1.tgz}
-    name: function-bind
-    version: 1.1.1
-    dev: false
-
-  r2.cnpmjs.org/function.prototype.name/1.1.5:
-    resolution: {integrity: sha512-uN7m/BzVKQnCUF/iW8jYea67v++2u7m5UgENbHRtdDVclOUP+FMPlCNdmk0h/ysGyo2tavMJEDqJAkJdRa1vMA==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/function.prototype.name/-/function.prototype.name-1.1.5.tgz}
-    name: function.prototype.name
-    version: 1.1.5
-    engines: {node: '>= 0.4'}
-    dependencies:
-      call-bind: r2.cnpmjs.org/call-bind/1.0.2
-      define-properties: 1.1.4
-      es-abstract: 1.20.3
-      functions-have-names: 1.2.3
-    dev: false
-
   r2.cnpmjs.org/get-stream/4.1.0:
     resolution: {integrity: sha512-GMat4EJ5161kIy2HevLlr4luNjBgvmj413KaQA7jt4V8B4RDsfpHk7WQ9GVqfYyyx8OS/L66Kox+rJRNklLK7w==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/get-stream/-/get-stream-4.1.0.tgz}
     name: get-stream
@@ -2774,23 +2985,6 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       pump: r2.cnpmjs.org/pump/3.0.0
-    dev: false
-
-  r2.cnpmjs.org/get-stream/6.0.1:
-    resolution: {integrity: sha512-ts6Wi+2j3jQjqi70w5AlN8DFnkSwC+MqmxEzdEALB2qXZYV3X/b1CTfgPLGJNMeAWxdPfU8FO1ms3NUfaHCPYg==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/get-stream/-/get-stream-6.0.1.tgz}
-    name: get-stream
-    version: 6.0.1
-    engines: {node: '>=10'}
-    dev: false
-
-  r2.cnpmjs.org/get-symbol-description/1.0.0:
-    resolution: {integrity: sha512-2EmdH1YvIQiZpltCNgkuiUnyukzxM/R6NDJX31Ke3BG1Nq5b0S2PhX59UKi9vZpPDQVdqn+1IcaAwnzTT5vCjw==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/get-symbol-description/-/get-symbol-description-1.0.0.tgz}
-    name: get-symbol-description
-    version: 1.0.0
-    engines: {node: '>= 0.4'}
-    dependencies:
-      call-bind: r2.cnpmjs.org/call-bind/1.0.2
-      get-intrinsic: 1.1.3
     dev: false
 
   r2.cnpmjs.org/getpass/0.1.7:
@@ -2849,31 +3043,13 @@ packages:
       har-schema: r2.cnpmjs.org/har-schema/2.0.0
     dev: false
 
-  r2.cnpmjs.org/has-tostringtag/1.0.0:
-    resolution: {integrity: sha512-kFjcSNhnlGV1kyoGk7OXKSawH5JOb/LzUc5w9B02hOTO0dfFRjbHQKvg1d6cf3HbeUmtU9VbbV3qzZ2Teh97WQ==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/has-tostringtag/-/has-tostringtag-1.0.0.tgz}
-    name: has-tostringtag
-    version: 1.0.0
-    engines: {node: '>= 0.4'}
-    dependencies:
-      has-symbols: 1.0.3
-    dev: false
-
-  r2.cnpmjs.org/has/1.0.3:
-    resolution: {integrity: sha512-f2dvO0VU6Oej7RkWJGrehjbzMAjFp5/VKPp5tTpWIV4JHHZK1/BxbFRtf/siA2SWTe09caDmVtYYzWEIbBS4zw==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/has/-/has-1.0.3.tgz}
-    name: has
-    version: 1.0.3
-    engines: {node: '>= 0.4.0'}
-    dependencies:
-      function-bind: r2.cnpmjs.org/function-bind/1.1.1
-    dev: false
-
   r2.cnpmjs.org/hash-base/3.1.0:
     resolution: {integrity: sha512-1nmYp/rhMDiE7AYkDw+lLwlAzz0AntGIe51F3RfFfEqyQ3feY2eI/NcwC6umIQVOASPMsWJLJScWKSSvzL9IVA==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/hash-base/-/hash-base-3.1.0.tgz}
     name: hash-base
     version: 3.1.0
     engines: {node: '>=4'}
     dependencies:
-      inherits: r2.cnpmjs.org/inherits/2.0.4
+      inherits: 2.0.4
       readable-stream: r2.cnpmjs.org/readable-stream/3.6.0
       safe-buffer: r2.cnpmjs.org/safe-buffer/5.2.1
     dev: false
@@ -2910,7 +3086,7 @@ packages:
     engines: {node: '>= 0.8'}
     dependencies:
       depd: r2.cnpmjs.org/depd/2.0.0
-      inherits: r2.cnpmjs.org/inherits/2.0.4
+      inherits: 2.0.4
       setprototypeof: r2.cnpmjs.org/setprototypeof/1.2.0
       statuses: r2.cnpmjs.org/statuses/2.0.1
       toidentifier: r2.cnpmjs.org/toidentifier/1.0.1
@@ -2973,17 +3149,6 @@ packages:
     version: 2.0.4
     dev: false
 
-  r2.cnpmjs.org/internal-slot/1.0.3:
-    resolution: {integrity: sha512-O0DB1JC/sPyZl7cIo78n5dR7eUSwwpYPiXRhTzNxZVAMUuB8vlnRFyLxdrVToks6XPLVnFfbzaVd5WLjhgg+vA==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/internal-slot/-/internal-slot-1.0.3.tgz}
-    name: internal-slot
-    version: 1.0.3
-    engines: {node: '>= 0.4'}
-    dependencies:
-      get-intrinsic: 1.1.3
-      has: r2.cnpmjs.org/has/1.0.3
-      side-channel: r2.cnpmjs.org/side-channel/1.0.4
-    dev: false
-
   r2.cnpmjs.org/ipaddr.js/1.9.1:
     resolution: {integrity: sha512-0KI/607xoxSToH7GjN1FfSbLoU0+btTicjsQSWQlh/hZykN8KpmMf7uYwPW3R+akZ6R/w18ZlXSHBYXiYUPO3g==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/ipaddr.js/-/ipaddr.js-1.9.1.tgz}
     name: ipaddr.js
@@ -2997,41 +3162,14 @@ packages:
     version: 1.1.1
     engines: {node: '>= 0.4'}
     dependencies:
-      call-bind: r2.cnpmjs.org/call-bind/1.0.2
-      has-tostringtag: r2.cnpmjs.org/has-tostringtag/1.0.0
+      call-bind: 1.0.2
+      has-tostringtag: 1.0.0
     dev: false
 
   r2.cnpmjs.org/is-arrayish/0.3.2:
     resolution: {integrity: sha512-eVRqCvVlZbuw3GrM63ovNSNAeA1K16kaR/LRY/92w0zxQ5/1YzwblUX652i4Xs9RwAGjW9d9y6X88t8OaAJfWQ==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/is-arrayish/-/is-arrayish-0.3.2.tgz}
     name: is-arrayish
     version: 0.3.2
-    dev: false
-
-  r2.cnpmjs.org/is-bigint/1.0.4:
-    resolution: {integrity: sha512-zB9CruMamjym81i2JZ3UMn54PKGsQzsJeo6xvN3HJJ4CAsQNB6iRutp2To77OfCNuoxspsIhzaPoO1zyCEhFOg==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/is-bigint/-/is-bigint-1.0.4.tgz}
-    name: is-bigint
-    version: 1.0.4
-    dependencies:
-      has-bigints: 1.0.2
-    dev: false
-
-  r2.cnpmjs.org/is-boolean-object/1.1.2:
-    resolution: {integrity: sha512-gDYaKHJmnj4aWxyj6YHyXVpdQawtVLHU5cb+eztPGczf6cjuTdwve5ZIEfgXqH4e57An1D1AKf8CZ3kYrQRqYA==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/is-boolean-object/-/is-boolean-object-1.1.2.tgz}
-    name: is-boolean-object
-    version: 1.1.2
-    engines: {node: '>= 0.4'}
-    dependencies:
-      call-bind: r2.cnpmjs.org/call-bind/1.0.2
-      has-tostringtag: r2.cnpmjs.org/has-tostringtag/1.0.0
-    dev: false
-
-  r2.cnpmjs.org/is-date-object/1.0.5:
-    resolution: {integrity: sha512-9YQaSxsAiSwcvS33MBk3wTCVnWK+HhF8VZR2jRxehM16QcVOdHqPn4VPHmRK4lSr38n9JriurInLcP90xsYNfQ==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/is-date-object/-/is-date-object-1.0.5.tgz}
-    name: is-date-object
-    version: 1.0.5
-    engines: {node: '>= 0.4'}
-    dependencies:
-      has-tostringtag: r2.cnpmjs.org/has-tostringtag/1.0.0
     dev: false
 
   r2.cnpmjs.org/is-function/1.0.2:
@@ -3046,7 +3184,7 @@ packages:
     version: 1.0.10
     engines: {node: '>= 0.4'}
     dependencies:
-      has-tostringtag: r2.cnpmjs.org/has-tostringtag/1.0.0
+      has-tostringtag: 1.0.0
     dev: false
 
   r2.cnpmjs.org/is-hex-prefixed/1.0.0:
@@ -3054,23 +3192,6 @@ packages:
     name: is-hex-prefixed
     version: 1.0.0
     engines: {node: '>=6.5.0', npm: '>=3'}
-    dev: false
-
-  r2.cnpmjs.org/is-negative-zero/2.0.2:
-    resolution: {integrity: sha512-dqJvarLawXsFbNDeJW7zAz8ItJ9cd28YufuuFzh0G8pNHjJMnY08Dv7sYX2uF5UpQOwieAeOExEYAWWfu7ZZUA==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/is-negative-zero/-/is-negative-zero-2.0.2.tgz}
-    name: is-negative-zero
-    version: 2.0.2
-    engines: {node: '>= 0.4'}
-    dev: false
-
-  r2.cnpmjs.org/is-regex/1.1.4:
-    resolution: {integrity: sha512-kvRdxDsxZjhzUX07ZnLydzS1TU/TJlTUHHY4YLL87e37oUA49DfkLqgy+VjFocowy29cKvcSiu+kIv728jTTVg==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/is-regex/-/is-regex-1.1.4.tgz}
-    name: is-regex
-    version: 1.1.4
-    engines: {node: '>= 0.4'}
-    dependencies:
-      call-bind: r2.cnpmjs.org/call-bind/1.0.2
-      has-tostringtag: r2.cnpmjs.org/has-tostringtag/1.0.0
     dev: false
 
   r2.cnpmjs.org/is-retry-allowed/2.2.0:
@@ -3087,36 +3208,10 @@ packages:
     engines: {node: '>=8'}
     dev: false
 
-  r2.cnpmjs.org/is-string/1.0.7:
-    resolution: {integrity: sha512-tE2UXzivje6ofPW7l23cjDOMa09gb7xlAqG6jG5ej6uPV32TlWP3NKPigtaGeHNu9fohccRYvIiZMfOOnOYUtg==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/is-string/-/is-string-1.0.7.tgz}
-    name: is-string
-    version: 1.0.7
-    engines: {node: '>= 0.4'}
-    dependencies:
-      has-tostringtag: r2.cnpmjs.org/has-tostringtag/1.0.0
-    dev: false
-
-  r2.cnpmjs.org/is-symbol/1.0.4:
-    resolution: {integrity: sha512-C/CPBqKWnvdcxqIARxyOh4v1UUEOCHpgDa0WYgpKDFMszcrPcffg5uhwSgPCLD2WWxmq6isisz87tzT01tuGhg==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/is-symbol/-/is-symbol-1.0.4.tgz}
-    name: is-symbol
-    version: 1.0.4
-    engines: {node: '>= 0.4'}
-    dependencies:
-      has-symbols: 1.0.3
-    dev: false
-
   r2.cnpmjs.org/is-typedarray/1.0.0:
     resolution: {integrity: sha512-cyA56iCMHAh5CdzjJIa4aohJyeO1YbwLi3Jc35MmRU6poroFjIGZzUzupGiRPOjgHg9TLu43xbpwXk523fMxKA==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/is-typedarray/-/is-typedarray-1.0.0.tgz}
     name: is-typedarray
     version: 1.0.0
-    dev: false
-
-  r2.cnpmjs.org/is-weakref/1.0.2:
-    resolution: {integrity: sha512-qctsuLZmIQ0+vSSMfoVvyFe2+GSEvnmZ2ezTup1SBse9+twCCeial6EEi3Nc2KFcf6+qz2FBPnjXsk8xhKSaPQ==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/is-weakref/-/is-weakref-1.0.2.tgz}
-    name: is-weakref
-    version: 1.0.2
-    dependencies:
-      call-bind: r2.cnpmjs.org/call-bind/1.0.2
     dev: false
 
   r2.cnpmjs.org/isstream/0.1.2:
@@ -3237,13 +3332,6 @@ packages:
     name: lowercase-keys
     version: 2.0.0
     engines: {node: '>=8'}
-    dev: false
-
-  r2.cnpmjs.org/lowercase-keys/3.0.0:
-    resolution: {integrity: sha512-ozCC6gdQ+glXOQsveKD0YsDy8DSQFjDTz4zyzEHNV5+JP5D62LmfDZ6o1cycFx9ouG940M5dE8C8CTewdj2YWQ==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/lowercase-keys/-/lowercase-keys-3.0.0.tgz}
-    name: lowercase-keys
-    version: 3.0.0
-    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dev: false
 
   r2.cnpmjs.org/md5.js/1.3.5:
@@ -3485,13 +3573,6 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  r2.cnpmjs.org/object-keys/1.1.1:
-    resolution: {integrity: sha512-NuAESUOUMrlIXOfHKzD6bpPu3tYt3xvjNdRIQ+FeT0lNb4K8WR70CaDxhuNguS2XG+GjkyMwOzsN5ZktImfhLA==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/object-keys/-/object-keys-1.1.1.tgz}
-    name: object-keys
-    version: 1.1.1
-    engines: {node: '>= 0.4'}
-    dev: false
-
   r2.cnpmjs.org/oboe/2.1.5:
     resolution: {integrity: sha512-zRFWiF+FoicxEs3jNI/WYUrVEgA7DeET/InK0XQuudGHRg8iIob3cNPrJTKaz4004uaA9Pbe+Dwa8iluhjLZWA==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/oboe/-/oboe-2.1.5.tgz}
     name: oboe
@@ -3528,13 +3609,6 @@ packages:
     name: p-cancelable
     version: 2.1.1
     engines: {node: '>=8'}
-    dev: false
-
-  r2.cnpmjs.org/p-cancelable/3.0.0:
-    resolution: {integrity: sha512-mlVgR3PGuzlo0MmTdk4cXqXWlwQDLnONTAg6sm62XkMJEiRxN3GL3SffkYvqwonbkJBcrI7Uvv5Zh9yjvn2iUw==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/p-cancelable/-/p-cancelable-3.0.0.tgz}
-    name: p-cancelable
-    version: 3.0.0
-    engines: {node: '>=12.20'}
     dev: false
 
   r2.cnpmjs.org/parse-asn1/5.1.6:
@@ -3822,16 +3896,6 @@ packages:
       safe-buffer: r2.cnpmjs.org/safe-buffer/5.2.1
     dev: false
 
-  r2.cnpmjs.org/side-channel/1.0.4:
-    resolution: {integrity: sha512-q5XPytqFEIKHkGdiMIrY10mvLRvnQh42/+GoBlFW3b2LXLE2xxJpZFdm94we0BaoV3RwJyGqg5wS7epxTv0Zvw==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/side-channel/-/side-channel-1.0.4.tgz}
-    name: side-channel
-    version: 1.0.4
-    dependencies:
-      call-bind: r2.cnpmjs.org/call-bind/1.0.2
-      get-intrinsic: 1.1.3
-      object-inspect: 1.12.2
-    dev: false
-
   r2.cnpmjs.org/simple-concat/1.0.1:
     resolution: {integrity: sha512-cSFtAPtRhljv69IK0hTVZQ+OfE9nePi/rtJmw5UjHeVyVroEqJXP1sFztKUy1qU+xvz3u/sfYJLa947b7nAN2Q==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/simple-concat/-/simple-concat-1.0.1.tgz}
     name: simple-concat
@@ -3939,12 +4003,6 @@ packages:
     dependencies:
       psl: 1.9.0
       punycode: r2.cnpmjs.org/punycode/2.1.1
-    dev: false
-
-  r2.cnpmjs.org/tr46/0.0.3:
-    resolution: {integrity: sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/tr46/-/tr46-0.0.3.tgz}
-    name: tr46
-    version: 0.0.3
     dev: false
 
   r2.cnpmjs.org/triple-beam/1.3.0:
@@ -4106,12 +4164,6 @@ packages:
       extsprintf: r2.cnpmjs.org/extsprintf/1.3.0
     dev: false
 
-  r2.cnpmjs.org/webidl-conversions/3.0.1:
-    resolution: {integrity: sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/webidl-conversions/-/webidl-conversions-3.0.1.tgz}
-    name: webidl-conversions
-    version: 3.0.1
-    dev: false
-
   r2.cnpmjs.org/websocket/1.0.34:
     resolution: {integrity: sha512-PRDso2sGwF6kM75QykIesBijKSVceR6jL2G8NGYyq2XrItNC2P5/qL5XeR056GhA+Ly7JMFvJb9I312mJfmqnQ==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/websocket/-/websocket-1.0.34.tgz}
     name: websocket
@@ -4133,20 +4185,8 @@ packages:
     name: whatwg-url
     version: 5.0.0
     dependencies:
-      tr46: r2.cnpmjs.org/tr46/0.0.3
-      webidl-conversions: r2.cnpmjs.org/webidl-conversions/3.0.1
-    dev: false
-
-  r2.cnpmjs.org/which-boxed-primitive/1.0.2:
-    resolution: {integrity: sha512-bwZdv0AKLpplFY2KZRX6TvyuN7ojjr7lwkg6ml0roIy9YeuSr7JS372qlNW18UQYzgYK9ziGcerWqZOmEn9VNg==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/which-boxed-primitive/-/which-boxed-primitive-1.0.2.tgz}
-    name: which-boxed-primitive
-    version: 1.0.2
-    dependencies:
-      is-bigint: r2.cnpmjs.org/is-bigint/1.0.4
-      is-boolean-object: r2.cnpmjs.org/is-boolean-object/1.1.2
-      is-number-object: 1.0.7
-      is-string: r2.cnpmjs.org/is-string/1.0.7
-      is-symbol: r2.cnpmjs.org/is-symbol/1.0.4
+      tr46: 0.0.3
+      webidl-conversions: 3.0.1
     dev: false
 
   r2.cnpmjs.org/wrappy/1.0.2:
