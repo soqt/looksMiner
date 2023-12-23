@@ -22,7 +22,7 @@
     "ethereumjs-util": "^7.1.5",
     "ethers": "^5.7.1",
     "lodash": "4.17.21",
-    "web3": "^1.8.0",
+    "web3": "^4.0.0",
     "web3-utils": "^1.8.0",
     "winston": "^3.8.2"
   },
