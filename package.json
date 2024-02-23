@@ -16,7 +16,7 @@
     "@ethereumjs/tx": "^3.5.2",
     "@looksrare/sdk": "^0.8.3",
     "abi-decoder": "^2.4.0",
-    "axios": "^0.27.2",
+    "axios": "^0.28.0",
     "axios-retry": "^3.3.1",
     "dotenv": "^16.0.2",
     "ethereumjs-util": "^7.1.5",
