@@ -8,7 +8,7 @@ specifiers:
   '@types/lodash': 4.14.185
   '@types/node': ^18.7.20
   abi-decoder: ^2.4.0
-  axios: ^0.27.2
+  axios: ^0.28.0
   axios-retry: ^3.3.1
   dotenv: ^16.0.2
   ethereumjs-util: ^7.1.5
@@ -24,7 +24,7 @@ dependencies:
   '@ethereumjs/tx': 3.5.2
   '@looksrare/sdk': 0.8.3_ethers@5.7.1
   abi-decoder: r2.cnpmjs.org/abi-decoder/2.4.0
-  axios: 0.27.2
+  axios: 0.28.0
   axios-retry: 3.3.1
   dotenv: 16.0.2
   ethereumjs-util: 7.1.5
@@ -463,6 +463,10 @@ packages:
     resolution: {integrity: sha512-iAB+JbDEGXhyIUavoDl9WP/Jj106Kz9DEn1DPgYw5ruDn0e3Wgi3sKFm55sASdGBNOQB8F59d9qQ7deqrHA8wQ==}
     dev: false
 
+  /asynckit/0.4.0:
+    resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==}
+    dev: false
+
   /axios-retry/3.3.1:
     resolution: {integrity: sha512-RohAUQTDxBSWLFEnoIG/6bvmy8l3TfpkclgStjl5MDCMBDgapAWCmr1r/9harQfWC8bzLC8job6UcL1A1Yc+/Q==}
     dependencies:
@@ -470,11 +474,12 @@ packages:
       is-retry-allowed: r2.cnpmjs.org/is-retry-allowed/2.2.0
     dev: false
 
-  /axios/0.27.2:
-    resolution: {integrity: sha512-t+yRIyySRTp/wua5xEr+z1q60QmLq8ABsS5O9Me1AsE5dfKqgnCFzwiCZZ/cGNd1lq4/7akDWMxdhVlucjmnOQ==}
+  /axios/0.28.0:
+    resolution: {integrity: sha512-Tu7NYoGY4Yoc7I+Npf9HhUMtEEpV7ZiLH9yndTCoNhcpBH0kwcvFbzYN9/u5QKI5A6uefjsNNWaz5olJVYS62Q==}
     dependencies:
       follow-redirects: 1.15.2
-      form-data: r2.cnpmjs.org/form-data/4.0.0
+      form-data: 4.0.0
+      proxy-from-env: 1.1.0
     transitivePeerDependencies:
       - debug
     dev: false
@@ -549,6 +554,13 @@ packages:
       simple-swizzle: r2.cnpmjs.org/simple-swizzle/0.2.2
     dev: false
 
+  /combined-stream/1.0.8:
+    resolution: {integrity: sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg==}
+    engines: {node: '>= 0.8'}
+    dependencies:
+      delayed-stream: 1.0.0
+    dev: false
+
   /cookie/0.5.0:
     resolution: {integrity: sha512-YZ3GUyn/o8gfKJlnlX7g7xq4gyO6OSuhGPKaaGssGB2qgDUS0gPgtTvoyZLTt9Ab6dC4hfc9dV5arkvc/OCmrw==}
     engines: {node: '>= 0.6'}
@@ -574,6 +586,11 @@ packages:
     dependencies:
       has-property-descriptors: 1.0.0
       object-keys: r2.cnpmjs.org/object-keys/1.1.1
+    dev: false
+
+  /delayed-stream/1.0.0:
+    resolution: {integrity: sha512-ZySD7Nf91aLB0RxL4KGrKHBXl7Eds1DAmEdcoVawXnLD7SDhpNgtuII2aAkg7a7QS41jxPSZ17p4VdGnMHk3MQ==}
+    engines: {node: '>=0.4.0'}
     dev: false
 
   /destroy/1.2.0:
@@ -756,6 +773,24 @@ packages:
     peerDependenciesMeta:
       debug:
         optional: true
+    dev: false
+
+  /form-data/2.3.3:
+    resolution: {integrity: sha512-1lLKB2Mu3aGP1Q/2eCOx0fNbRMe7XdwktwOruhfqqd0rIJWwN4Dh+E3hrPSlDCXnSR7UtZ1N38rVXm+6+MEhJQ==}
+    engines: {node: '>= 0.12'}
+    dependencies:
+      asynckit: 0.4.0
+      combined-stream: 1.0.8
+      mime-types: 2.1.35
+    dev: false
+
+  /form-data/4.0.0:
+    resolution: {integrity: sha512-ETEklSGi5t0QMZuiXoA/Q6vcnxcLQP5vdugSpuAyi6SVGi2clPPp+xgEhuMaHC+zGgn31Kd235W35f7Hykkaww==}
+    engines: {node: '>= 6'}
+    dependencies:
+      asynckit: 0.4.0
+      combined-stream: 1.0.8
+      mime-types: 2.1.35
     dev: false
 
   /functions-have-names/1.2.3:
@@ -946,6 +981,10 @@ packages:
 
   /parse-headers/2.0.5:
     resolution: {integrity: sha512-ft3iAoLOB/MlwbNXgzy43SWGP6sQki2jQvAyBg/zDFAgr9bfNWZIUj42Kw2eJIl8kEi4PbgE6U1Zau/HwI75HA==}
+    dev: false
+
+  /proxy-from-env/1.1.0:
+    resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==}
     dev: false
 
   /psl/1.9.0:
@@ -1922,12 +1961,6 @@ packages:
     version: 1.0.1
     dev: false
 
-  r2.cnpmjs.org/asynckit/0.4.0:
-    resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/asynckit/-/asynckit-0.4.0.tgz}
-    name: asynckit
-    version: 0.4.0
-    dev: false
-
   r2.cnpmjs.org/available-typed-arrays/1.0.5:
     resolution: {integrity: sha512-DMD0KiN46eipeziST1LPP/STfDU0sufISXmjSgvVsoU2tqxctQeASejWcfNtxYKqETM1UxQ8sp2OrSBWpHY6sw==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/available-typed-arrays/-/available-typed-arrays-1.0.5.tgz}
     name: available-typed-arrays
@@ -2213,15 +2246,6 @@ packages:
       text-hex: r2.cnpmjs.org/text-hex/1.0.0
     dev: false
 
-  r2.cnpmjs.org/combined-stream/1.0.8:
-    resolution: {integrity: sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/combined-stream/-/combined-stream-1.0.8.tgz}
-    name: combined-stream
-    version: 1.0.8
-    engines: {node: '>= 0.8'}
-    dependencies:
-      delayed-stream: r2.cnpmjs.org/delayed-stream/1.0.0
-    dev: false
-
   r2.cnpmjs.org/content-disposition/0.5.4:
     resolution: {integrity: sha512-FveZTNuGw04cxlAiWbzi6zTAL/lhehaWbTtgluJh4/E95DqMwTmha3KZN1aAWA8cFIhHzMZUvLevkw5Rqk+tSQ==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/content-disposition/-/content-disposition-0.5.4.tgz}
     name: content-disposition
@@ -2395,13 +2419,6 @@ packages:
     name: defer-to-connect
     version: 2.0.1
     engines: {node: '>=10'}
-    dev: false
-
-  r2.cnpmjs.org/delayed-stream/1.0.0:
-    resolution: {integrity: sha512-ZySD7Nf91aLB0RxL4KGrKHBXl7Eds1DAmEdcoVawXnLD7SDhpNgtuII2aAkg7a7QS41jxPSZ17p4VdGnMHk3MQ==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/delayed-stream/-/delayed-stream-1.0.0.tgz}
-    name: delayed-stream
-    version: 1.0.0
-    engines: {node: '>=0.4.0'}
     dev: false
 
   r2.cnpmjs.org/depd/2.0.0:
@@ -2684,28 +2701,6 @@ packages:
     resolution: {integrity: sha512-EFRDrsMm/kyqbTQocNvRXMLjc7Es2Vk+IQFx/YW7hkUH1eBl4J1fqiP34l74Yt0pFLCNpc06fkbVk00008mzjg==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/form-data-encoder/-/form-data-encoder-1.7.1.tgz}
     name: form-data-encoder
     version: 1.7.1
-    dev: false
-
-  r2.cnpmjs.org/form-data/2.3.3:
-    resolution: {integrity: sha512-1lLKB2Mu3aGP1Q/2eCOx0fNbRMe7XdwktwOruhfqqd0rIJWwN4Dh+E3hrPSlDCXnSR7UtZ1N38rVXm+6+MEhJQ==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/form-data/-/form-data-2.3.3.tgz}
-    name: form-data
-    version: 2.3.3
-    engines: {node: '>= 0.12'}
-    dependencies:
-      asynckit: r2.cnpmjs.org/asynckit/0.4.0
-      combined-stream: r2.cnpmjs.org/combined-stream/1.0.8
-      mime-types: 2.1.35
-    dev: false
-
-  r2.cnpmjs.org/form-data/4.0.0:
-    resolution: {integrity: sha512-ETEklSGi5t0QMZuiXoA/Q6vcnxcLQP5vdugSpuAyi6SVGi2clPPp+xgEhuMaHC+zGgn31Kd235W35f7Hykkaww==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/form-data/-/form-data-4.0.0.tgz}
-    name: form-data
-    version: 4.0.0
-    engines: {node: '>= 6'}
-    dependencies:
-      asynckit: r2.cnpmjs.org/asynckit/0.4.0
-      combined-stream: r2.cnpmjs.org/combined-stream/1.0.8
-      mime-types: 2.1.35
     dev: false
 
   r2.cnpmjs.org/forwarded/0.2.0:
@@ -3710,10 +3705,10 @@ packages:
       aws-sign2: r2.cnpmjs.org/aws-sign2/0.7.0
       aws4: r2.cnpmjs.org/aws4/1.11.0
       caseless: r2.cnpmjs.org/caseless/0.12.0
-      combined-stream: r2.cnpmjs.org/combined-stream/1.0.8
+      combined-stream: 1.0.8
       extend: r2.cnpmjs.org/extend/3.0.2
       forever-agent: r2.cnpmjs.org/forever-agent/0.6.1
-      form-data: r2.cnpmjs.org/form-data/2.3.3
+      form-data: 2.3.3
       har-validator: r2.cnpmjs.org/har-validator/5.1.5
       http-signature: r2.cnpmjs.org/http-signature/1.2.0
       is-typedarray: r2.cnpmjs.org/is-typedarray/1.0.0
